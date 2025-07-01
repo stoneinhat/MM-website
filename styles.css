@@ -36,9 +36,12 @@ body {
     padding: 1rem 0;
 }
 
-.header.scrolled .nav-menu a,
-.header.scrolled .social-icons img {
-    filter: brightness(0);
+.header.scrolled .nav-menu a {
+    color: #333;
+}
+
+.header.scrolled .utility-icons i {
+    color: #333;
 }
 
 .header-container {
@@ -51,21 +54,23 @@ body {
 }
 
 .logo {
-    flex: 1;
+    flex: 0 0 auto;
 }
 
-.logo img {
-    height: 40px;
-    width: auto;
-    transition: all 0.3s ease;
+.logo h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
 }
 
-.header.scrolled .logo img {
-    filter: brightness(0);
+.header.scrolled .logo h2 {
+    color: #333;
 }
 
 .nav-menu {
-    flex: 2;
+    flex: 1;
     display: flex;
     justify-content: center;
 }
@@ -106,33 +111,37 @@ body {
     width: 100%;
 }
 
-.social-icons {
-    flex: 1;
+.utility-icons {
+    flex: 0 0 auto;
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
 }
 
-.social-link {
-    display: inline-block;
-    transition: transform 0.3s ease;
+.utility-icons i {
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-.social-link:hover {
-    transform: scale(1.1);
+.utility-icons i:hover {
+    color: #ccc;
 }
 
-.social-link img {
-    height: 24px;
-    width: auto;
-    filter: brightness(0) invert(1);
-    transition: all 0.3s ease;
+.header.scrolled .utility-icons i {
+    color: #333;
+}
+
+.header.scrolled .utility-icons i:hover {
+    color: #666;
 }
 
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    margin-left: 1rem;
 }
 
 .hamburger span {
@@ -736,7 +745,7 @@ body {
         text-align: center;
     }
 
-    .social-icons {
+    .utility-icons {
         display: none;
     }
 
@@ -744,8 +753,8 @@ body {
         flex: 0 1 auto;
     }
 
-    .logo img {
-        height: 30px;
+    .logo h2 {
+        font-size: 2rem;
     }
 
     .hero-title {
