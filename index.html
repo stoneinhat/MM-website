@@ -5,28 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modern Metals - Metal-Shaping Craftsmanship</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Header / Navigation (Transparent Overlay) -->
     <header class="header">
         <div class="header-container">
-            <div class="logo">
-                <h2>M</h2>
+            <div class="header-left">
+                <div class="logo">
+                    <img src="Header/logo.png" alt="Modern Metals Logo">
+                </div>
+                <div class="header-separator"></div>
+                <nav class="nav-menu">
+                    <ul>
+                        <li class="dropdown">
+                            <a href="#portfolio">portfolio</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#services">services</a>
+                            <div class="dropdown-content">
+                                <a href="#steel-scape">STEEL SCAPE</a>
+                                <a href="#fire-tables">FIRE TABLES</a>
+                                <a href="#other-works">OTHER WORKS</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#about">about us</a>
+                            <div class="dropdown-content">
+                                <a href="#meet-team">MEET THE TEAM</a>
+                            </div>
+                        </li>
+                        <li><a href="#contact">contact us</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="utility-icons">
-                <i class="fas fa-search"></i>
-                <i class="fas fa-shopping-cart"></i>
+            <div class="header-right">
+                <div class="call-button">
+                    <a href="tel:+1234567890">
+                        <img src="Header/call now image.png" alt="Click To Call">
+                    </a>
+                </div>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><img src="Header/insta logo.png" alt="Instagram"></a>
+                    <a href="#" class="social-icon"><img src="Header/x-logo 1.png" alt="X (Twitter)"></a>
+                    <a href="#" class="social-icon"><img src="Header/google-logo 1.png" alt="Google"></a>
+                    <a href="#" class="social-icon"><img src="Header/Frame 6465.png" alt="Frame 6465"></a>
+                    <a href="#" class="social-icon"><img src="Header/youtube-logo 1.png" alt="YouTube"></a>
+                </div>
             </div>
             <div class="hamburger">
                 <span></span>
@@ -40,25 +66,47 @@
     <section id="home" class="hero" style="background-image: url('home/DJI_0596 1.jpg');">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title">MODERN METALS</h1>
+            <h1 class="hero-title">MODERN METALS UTAH</h1>
+            <p class="hero-subtitle">Aesthetic metal features for your home and landscape</p>
+            <button class="hero-contact-btn" onclick="openContactModal()">CONTACT US</button>
         </div>
         <div class="scroll-indicator">
             <i class="fas fa-chevron-down"></i>
         </div>
     </section>
-  <!-- Introduction Section: "Metal-Shaping" -->
+  <!-- Introduction Section: "Metal-Scape Studio" -->
   <section class="introduction">
     <div class="container">
-        <div class="intro-content">
+        <!-- Top Section: Header + Image -->
+        <div class="intro-top">
             <div class="intro-text">
-                <h2>Metal-shaping untold stories about craftsmanship, sustainable landscapes, and durable materials.</h2>
-                <p>We transform raw metal into extraordinary pieces that tell stories of innovation, sustainability, and timeless beauty. Our craftsmen blend traditional techniques with modern technology to create landscapes and structures that endure.</p>
-                <button class="btn btn-portfolio">VIEW PORTFOLIO</button>
+                <div class="studio-tag">
+                    <span>• METAL SCAPE STUDIO</span>
+                </div>
+                <h2>Metal-Scape artists excited about craftsmanship, sustainable landscapes, and durable materials.</h2>
+                <a href="#" class="read-more">read more</a>
             </div>
             <div class="intro-image">
-                <div class="placeholder-image">
-                    <i class="fas fa-fire"></i>
-                    <p>Metalwork Close-up</p>
+                <img src="home/section2/h1-img-01.jpg.jpg" alt="Metal craftsmanship welding" />
+            </div>
+        </div>
+        
+        <!-- Bottom Section: Steps + Services -->
+        <div class="intro-bottom">
+            <div class="process-steps">
+                <div class="step-item fade-in-step" data-step="1">Step 1: Consultation/Quote</div>
+                <div class="step-item fade-in-step" data-step="2">Step 2: Design / Build</div>
+                <div class="step-item fade-in-step" data-step="3">Step 3: Installation</div>
+            </div>
+            
+            <div class="service-columns">
+                <div class="service-column">
+                    <h3>Commercial / Contractor</h3>
+                    <p id="commercial-text">Simply email your plans or job details to receive a quote and ask about our contractor discount.</p>
+                </div>
+                <div class="service-column">
+                    <h3>Residential</h3>
+                    <p id="residential-text">Starting your landscape from scratch? We can help from design to install.</p>
                 </div>
             </div>
         </div>
@@ -70,129 +118,200 @@
     <div class="gallery-container">
         <div class="gallery-track">
             <div class="gallery-slide">
-                <div class="placeholder-image">
-                    <i class="fas fa-image"></i>
-                    <p>Project 1</p>
-                </div>
+                <img src="gallery/project1.png" alt="Modern metal landscaping project" />
             </div>
             <div class="gallery-slide">
-                <div class="placeholder-image">
-                    <i class="fas fa-image"></i>
-                    <p>Project 2</p>
-                </div>
+                <img src="gallery/project2.png" alt="Custom metal planter design" />
             </div>
             <div class="gallery-slide">
-                <div class="placeholder-image">
-                    <i class="fas fa-image"></i>
-                    <p>Project 3</p>
-                </div>
+                <img src="gallery/project3.png" alt="Metal landscape installation" />
             </div>
             <div class="gallery-slide">
-                <div class="placeholder-image">
-                    <i class="fas fa-image"></i>
-                    <p>Project 4</p>
-                </div>
+                <img src="gallery/project4.jpg" alt="Metal fire feature design" />
             </div>
             <div class="gallery-slide">
-                <div class="placeholder-image">
-                    <i class="fas fa-image"></i>
-                    <p>Project 5</p>
-                </div>
+                <img src="gallery/project5.png" alt="Custom metal work project" />
+            </div>
+            <div class="gallery-slide">
+                <img src="gallery/project6.jpg" alt="Metal landscape architecture" />
             </div>
         </div>
         <div class="gallery-nav">
             <button class="gallery-btn prev-btn">
-                <i class="fas fa-chevron-left"></i>
+                <span class="gallery-arrow left-arrow"></span>
             </button>
             <button class="gallery-btn next-btn">
-                <i class="fas fa-chevron-right"></i>
+                <span class="gallery-arrow right-arrow"></span>
             </button>
+        </div>
+    </div>
+    <div class="gallery-sidebar">
+        <div class="sidebar-content">
+            <div class="sidebar-title-container">
+                <div class="sidebar-dot"></div>
+                <h3 class="sidebar-title">OUR WORK</h3>
+            </div>
+            <button class="sidebar-contact-btn" onclick="openContactModal()">CONTACT US</button>
         </div>
     </div>
 </section>
 
-    <!-- Services Section -->
-    <section class="works-widget">
-        <!-- 1. Vertical Navigation (Left Side) -->
-        <nav class="widget-nav">
-            <ul class="widget-nav__list">
-                <li class="widget-nav__item">
-                    <a href="#metal-scapes">
-                        <span>METAL SCAPES</span>
-                    </a>
-                </li>
-                <li class="widget-nav__item">
-                    <a href="#fire-features">
-                        <span>FIRE FEATURES</span>
-                    </a>
-                </li>
-                <li class="widget-nav__item">
-                    <a href="#other-works">
-                        <span>OTHER WORKS</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <!-- 2. Main Content (Right Side: Image + Details) -->
-        <main class="widget-content">
-            <!-- Image Column -->
-            <div class="widget-content__image-container">
-                <img 
-                    src="https://i.imgur.com/gOq2x6H.jpeg" 
-                    alt="Interior of Moby Thrift store with custom metal racks"
-                    onerror="this.onerror=null; this.src='https://placehold.co/800x600/e2e8f0/334155?text=Image+Not+Found';">
+    <!-- Services Section - Horizontal Accordion -->
+    <section class="services-accordion">
+        <div class="accordion-container">
+            <div class="accordion-item active" data-category="metal-scapes">
+                <div class="accordion-item__background">
+                    <img src="accordian/DS975 1.png" alt="Metal Scapes Background" class="accordion-bg-image">
+                    <div class="accordion-overlay"></div>
+                </div>
+                <div class="accordion-item__collapsed">
+                    <div class="accordion-tab">
+                        <span class="accordion-tab__title">METAL SCAPES</span>
+                    </div>
+                </div>
+                <div class="accordion-item__expanded">
+                    <div class="accordion-expanded__image">
+                        <img src="accordian/DS975 1.png" alt="Metal Scapes Project">
+                    </div>
+                    <div class="accordion-expanded__details">
+                        <h2 class="accordion-category-title">METAL SCAPES</h2>
+                        <h3>WORKS DETAILS</h3>
+                        <p class="description">Moby thrift - Interior clothing racks and floating plant curtain</p>
+                        <p class="date">December 2020</p>
+                        <button class="contact-button" onclick="openContactModal()">CONTACT US</button>
+                    </div>
+                </div>
             </div>
-            <!-- Details Column -->
-            <div class="widget-content__details-container">
-                <h3>WORKS DETAILS</h3>
-                <p class="description">Moby thrift - Interior clothing racks and floating plant curtain</p>
-                <p class="date">December 2020</p>
-                <a href="#contact" class="contact-button">CONTACT US</a>
-            </div>
-        </main>
-    </section>
 
+            <div class="accordion-item" data-category="fire-features">
+                <div class="accordion-item__background">
+                    <img src="accordian/DSC075 1.png" alt="Fire Features Background" class="accordion-bg-image">
+                    <div class="accordion-overlay"></div>
+                </div>
+                <div class="accordion-item__collapsed">
+                    <div class="accordion-tab">
+                        <span class="accordion-tab__title">FIRE FEATURES</span>
+                    </div>
+                </div>
+                <div class="accordion-item__expanded">
+                    <div class="accordion-expanded__image">
+                        <img src="accordian/DSC075 1.png" alt="Fire Features Project">
+                    </div>
+                    <div class="accordion-expanded__details">
+                        <h2 class="accordion-category-title">FIRE FEATURES</h2>
+                        <h3>WORKS DETAILS</h3>
+                        <p class="description">Gabion Wall<br>Orem, UT</p>
+                        <p class="date">August 2022</p>
+                        <button class="contact-button" onclick="openContactModal()">CONTACT US</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item" data-category="other-works">
+                <div class="accordion-item__background">
+                    <img src="accordian/DSC07975 1.png" alt="Other Works Background" class="accordion-bg-image">
+                    <div class="accordion-overlay"></div>
+                </div>
+                <div class="accordion-item__collapsed">
+                    <div class="accordion-tab">
+                        <span class="accordion-tab__title">OTHER WORKS</span>
+                    </div>
+                </div>
+                <div class="accordion-item__expanded">
+                    <div class="accordion-expanded__image">
+                        <img src="accordian/DSC07975 1.png" alt="Other Works Project">
+                    </div>
+                    <div class="accordion-expanded__details">
+                        <h2 class="accordion-category-title">OTHER WORKS</h2>
+                        <h3>WORKS DETAILS</h3>
+                        <p class="description">Custom fire tables and outdoor heating elements designed for residential and commercial spaces</p>
+                        <p class="date">December 2020</p>
+                        <button class="contact-button" onclick="openContactModal()">CONTACT US</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Team Section / Testimonials -->
     <section class="team">
         <div class="container">
             <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-image">
-                        <div class="placeholder-image">
-                            <i class="fas fa-user"></i>
-                        </div>
-                    </div>
-                    <div class="member-info">
-                        <h4>Sarah Johnson</h4>
-                        <p>Lead Metal Craftsman</p>
-                    </div>
+                <!-- Gabriel -->
+                <div class="team-item photo-item">
+                    <img src="team/Gabe.png" alt="Gabriel Spotts">
                 </div>
-                <div class="team-member">
-                    <div class="member-image">
-                        <div class="placeholder-image">
-                            <i class="fas fa-user"></i>
-                        </div>
-                    </div>
-                    <div class="member-info">
-                        <h4>Mike Chen</h4>
-                        <p>Design Specialist</p>
-                    </div>
+                <div class="team-item text-item">
+                    <h4>Gabriel Spotts</h4>
+                    <p>OWNER / OPERATOR</p>
                 </div>
-                <div class="team-member">
-                    <div class="member-image">
-                        <div class="placeholder-image">
-                            <i class="fas fa-user"></i>
-                        </div>
-                    </div>
-                    <div class="member-info">
-                        <h4>Emma Davis</h4>
-                        <p>Project Manager</p>
-                    </div>
+                
+                <!-- Dillon -->
+                <div class="team-item photo-item">
+                    <img src="team/Dillon.png" alt="Dillon Flinders">
                 </div>
-                <div class="meet-team">
-                    <h3>Meet The Team</h3>
+                <div class="team-item text-item">
+                    <h4>Dillon Flinders</h4>
+                    <p>OWNER / PROJECT MANAGER</p>
                 </div>
+                
+                <!-- Meet The Team Button -->
+                <div class="team-item meet-team-item">
+                    <a href="team.html" class="meet-team-btn">Meet The Team</a>
+                </div>
+                
+                <!-- Monika -->
+                <div class="team-item photo-item">
+                    <img src="team/Monika.png" alt="Monika Robinson">
+                </div>
+                <div class="team-item text-item">
+                    <h4>Monika Robinson</h4>
+                    <p>DESIGN MANAGER</p>
+                </div>
+                
+                <!-- Guillermo -->
+                <div class="team-item photo-item">
+                    <img src="team/Guillermo.png" alt="Guillermo Medici">
+                </div>
+                <div class="team-item text-item">
+                    <h4>Guillermo Medici</h4>
+                    <p>STEEL SCAPE ARTIST</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="testimonials-container">
+            <div class="testimonials-content">
+                <div class="testimonial-item active">
+                    <p class="testimonial-quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."</p>
+                    <p class="testimonial-attribution">MARCUS AURELIUS / GREEN PROJECTS</p>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-quote">"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae. Mauris viverra veniam sit amet vehicula."</p>
+                    <p class="testimonial-attribution">JULIA CAESAR / GREEN PROJECTS</p>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-quote">"Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede."</p>
+                    <p class="testimonial-attribution">CLAUDIUS MAXIMUS / GREEN PROJECTS</p>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-quote">"Curabitur ullamcorper ultricies nisi. Nam eget dui etiam rhoncus maecenas tempus tellus eget condimentum rhoncus."</p>
+                    <p class="testimonial-attribution">OCTAVIUS PRIME / GREEN PROJECTS</p>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-quote">"Donec quam felis ultricies nec pellentesque eu pretium quis sem. Nulla consequat massa quis enim donec pede justo."</p>
+                    <p class="testimonial-attribution">BRUTUS MINOR / GREEN PROJECTS</p>
+                </div>
+            </div>
+            <div class="testimonial-indicators">
+                <div class="indicator active" data-index="0"></div>
+                <div class="indicator" data-index="1"></div>
+                <div class="indicator" data-index="2"></div>
+                <div class="indicator" data-index="3"></div>
+                <div class="indicator" data-index="4"></div>
             </div>
         </div>
     </section>
@@ -262,6 +381,35 @@
             </div>
         </div>
     </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeContactModal()">&times;</span>
+            <h2>Contact Us</h2>
+            <form id="contactForm" class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="projectDetails">Details About Project *</label>
+                    <textarea id="projectDetails" name="projectDetails" rows="5" required placeholder="Tell us about your project..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
