@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Modern Metals</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Neucha:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header / Navigation (Transparent Overlay) -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-left">
+                <div class="logo">
+                    <img src="assets/Header/logo.png" alt="Modern Metals Logo">
+                </div>
+                <div class="header-separator"></div>
+                <nav class="nav-menu">
+                    <ul>
+                        <li class="dropdown">
+                            <a href="portfolio.html">portfolio</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="index.html#services">services</a>
+                            <div class="dropdown-content">
+                                <a href="index.html#steel-scape">STEEL SCAPE</a>
+                                <a href="index.html#fire-tables">FIRE TABLES</a>
+                                <a href="index.html#other-works">OTHER WORKS</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="index.html#about">about us</a>
+                            <div class="dropdown-content">
+                                <a href="index.html#meet-team">MEET THE TEAM</a>
+                            </div>
+                        </li>
+                        <li><a href="index.html#contact">contact us</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-right">
+                <div class="call-button">
+                    <a href="tel:+1234567890">
+                        <img src="assets/Header/call now image.png" alt="Click To Call">
+                    </a>
+                </div>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><img src="assets/Header/insta logo.png" alt="Instagram"></a>
+                    <a href="#" class="social-icon"><img src="assets/Header/x-logo 1.png" alt="X (Twitter)"></a>
+                    <a href="#" class="social-icon"><img src="assets/Header/google-logo 1.png" alt="Google"></a>
+                    <a href="#" class="social-icon"><img src="assets/Header/Frame 6465.png" alt="Frame 6465"></a>
+                    <a href="#" class="social-icon"><img src="assets/Header/youtube-logo 1.png" alt="YouTube"></a>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="portfolio-hero" class="hero" style="background-image: url('assets/home/DJI_0596 1.jpg');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">PORTFOLIO</h1>
+            <button class="hero-contact-btn" onclick="openContactModal()">CONTACT US</button>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="introduction">
+        <div class="container">
+            <!-- Top Section: Quote and Text -->
+            <div class="intro-top">
+                <div class="intro-text">
+                    <div class="studio-tag">
+                        <span>• PORTFOLIO</span>
+                    </div>
+                    <h2>Metal-Scape artists excited about craftsmanship, sustainable landscapes, and durable materials.</h2>
+                    <a href="#" class="read-more">view projects</a>
+                </div>
+                <div class="intro-image">
+                    <div class="intro-image-text">
+                        <p>Starting your landscape from scratch? We can help from design to install making it simple and easy.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Section: Residential and Commercial Images -->
+            <div class="portfolio-categories">
+                <div class="category-section">
+                    <div class="category-image">
+                        <img src="assets/home/section2/h1-img-01.jpg.jpg" alt="Residential Projects" />
+                        <div class="category-overlay">
+                            <h3>RESIDENTIAL</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-divider"></div>
+                
+                <div class="category-section">
+                    <div class="category-image">
+                        <img src="assets/home/gallery/project4.jpg" alt="Commercial Projects" />
+                        <div class="category-overlay">
+                            <h3>COMMERCIAL</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo-section">
+                        <img src="assets/footer/grey logo.png" alt="Modern Metals Logo">
+                    </div>
+                    <div class="footer-columns">
+                        <div class="footer-spacer"></div>
+                        <div class="footer-section">
+                            <h4>SOCIAL</h4>
+                            <ul>
+                                <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+                                <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+                                <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h4>INFO</h4>
+                            <ul>
+                                <li><a href="#services">Schedule</a></li>
+                                <li><a href="portfolio.html">Portfolio</a></li>
+                                <li><a href="#services">Services</a></li>
+                                <li><a href="#contact">Shop</a></li>
+                                <li><a href="#about">About Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h4>CONTACT</h4>
+                            <ul>
+                                <li><a href="tel:801-900-5191">801-900-5191</a></li>
+                                <li><a href="mailto:ModernMetalsUtah@gmail.com">ModernMetalsUtah@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Modern Metals. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeContactModal()">&times;</span>
+            <h2>Contact Us</h2>
+            <form id="contactForm" class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="projectDetails">Details About Project *</label>
+                    <textarea id="projectDetails" name="projectDetails" rows="5" required placeholder="Tell us about your project..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -724,8 +724,81 @@ window.onclick = function(event) {
     }
 }
 
+// Function to toggle service button selection
+function toggleServiceSelection(button) {
+    button.classList.toggle('selected');
+}
+
+// Function to get selected services
+function getSelectedServices() {
+    const selectedServices = [];
+    const selectedButtons = document.querySelectorAll('.service-button.selected');
+    selectedButtons.forEach(button => {
+        selectedServices.push(button.getAttribute('data-service'));
+    });
+    return selectedServices;
+}
+
+// Function to submit contact form with selected services
+function submitContactForm() {
+    const firstName = document.getElementById('ctaFirstName').value;
+    const lastName = document.getElementById('ctaLastName').value;
+    const email = document.getElementById('ctaEmail').value;
+    const message = document.getElementById('ctaMessage').value;
+    const selectedServices = getSelectedServices();
+    
+    // Basic validation
+    if (!firstName || !lastName || !email || !message) {
+        alert('Please fill in all required fields (First Name, Last Name, Email, and Project Details).');
+        return;
+    }
+    
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+    
+    // Build the complete message with selected services
+    let completeMessage = message;
+    if (selectedServices.length > 0) {
+        completeMessage += '\n\nSelected Services:\n- ' + selectedServices.map(service => 
+            service.replace('-', ' ').toUpperCase()
+        ).join('\n- ');
+    }
+    
+    // Simulate form submission
+    const submitBtn = document.querySelector('.btn-contact-form');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    
+    setTimeout(() => {
+        alert(`Thank you, ${firstName} ${lastName}! Your message has been sent.\n\nWe will contact you at ${email} soon.`);
+        
+        // Reset form
+        document.getElementById('ctaContactForm').reset();
+        document.querySelectorAll('.service-button').forEach(button => {
+            button.classList.remove('selected');
+        });
+        
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }, 2000);
+}
+
+// Function to scroll to top of page
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
 // Handle contact form submission
 document.addEventListener('DOMContentLoaded', function() {
+    // Handle modal contact form
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -756,6 +829,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitBtn.disabled = false;
                 closeContactModal();
             }, 2000);
+        });
+    }
+    
+    // Handle CTA section contact form - prevent default submission since Contact Us button handles it
+    const ctaContactForm = document.getElementById('ctaContactForm');
+    if (ctaContactForm) {
+        ctaContactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Form submission is handled by the Contact Us button
         });
     }
 });
