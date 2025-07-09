@@ -247,6 +247,56 @@ body {
     position: relative;
 }
 
+/* Portfolio Hero - Refined smaller version for portfolio and other pages */
+#portfolio-hero {
+    height: 50vh;
+    min-height: 400px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#portfolio-hero .hero-content {
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    padding: 2rem;
+}
+
+#portfolio-hero .hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#portfolio-hero .hero-contact-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(15px);
+    border-radius: 2px;
+}
+
+#portfolio-hero .hero-contact-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+#portfolio-hero .scroll-indicator {
+    bottom: 1.5rem;
+    opacity: 0.8;
+}
+
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -910,7 +960,7 @@ body {
     
     .accordion-item.active {
         flex: 1;
-        min-height: 300px;
+        min-height: 320px;
         min-width: 0;
     }
     
@@ -922,8 +972,8 @@ body {
     }
     
     .accordion-tab__title {
-        font-size: 22px;
-        letter-spacing: 1.5px;
+        font-size: 18px;
+        letter-spacing: 1px;
     }
     
     .accordion-item__expanded {
@@ -937,35 +987,46 @@ body {
     .accordion-expanded__details {
         flex: 0 0 40%;
         padding: 1.2rem 1rem;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 0.8rem;
     }
     
     .accordion-category-title {
-        font-size: 1.2rem;
+        font-size: 1rem;
         margin-bottom: 0.8rem;
-        letter-spacing: 0.12em;
+        letter-spacing: 0.1em;
     }
     
     .accordion-expanded__details h3 {
         font-size: 0.65rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.3;
     }
     
     .accordion-expanded__details .description {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
+        line-height: 1.5;
+        margin-bottom: 0.8rem;
     }
     
     .accordion-expanded__details .date {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         margin-bottom: 1rem;
     }
     
     .accordion-expanded__details .contact-button {
         padding: 0.5rem 1rem;
         font-size: 0.6rem;
+        margin-top: auto;
     }
 }
 
 @media (max-width: 480px) {
+    .services-accordion {
+        height: clamp(400px, 50vh, 600px);
+    }
+    
     .accordion-item {
         flex: 0 0 50px;
         min-height: 50px;
@@ -974,7 +1035,7 @@ body {
     
     .accordion-item.active {
         flex: 1;
-        min-height: 250px;
+        min-height: 400px;
         min-width: 0;
     }
     
@@ -984,33 +1045,42 @@ body {
     }
     
     .accordion-expanded__details {
-        padding: 1rem 0.8rem;
+        padding: 1.5rem 1.2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 1rem;
+        height: 100%;
     }
     
     .accordion-category-title {
-        font-size: 1rem;
-        margin-bottom: 0.6rem;
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
         letter-spacing: 0.1em;
     }
     
     .accordion-expanded__details h3 {
-        font-size: 0.6rem;
-        margin-bottom: 0.8rem;
+        font-size: 0.7rem;
+        margin-bottom: 1rem;
+        line-height: 1.4;
     }
     
     .accordion-expanded__details .description {
-        font-size: 0.8rem;
-        line-height: 1.5;
+        font-size: 0.85rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+        flex-grow: 1;
     }
     
     .accordion-expanded__details .date {
-        font-size: 0.7rem;
-        margin-bottom: 0.8rem;
+        font-size: 0.75rem;
+        margin-bottom: 1.5rem;
     }
     
     .accordion-expanded__details .contact-button {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.55rem;
+        padding: 0.7rem 1.2rem;
+        font-size: 0.65rem;
+        margin-top: auto;
     }
 }
 
@@ -1505,6 +1575,259 @@ body {
     border-color: #333;
 }
 
+/* Meet The Team Section */
+.meet-team-section {
+    background: #000;
+    color: #fff;
+    padding: 4rem 0;
+    position: relative;
+}
+
+.team-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+}
+
+.team-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-self: end;
+}
+
+.team-meet-btn {
+    background: transparent;
+    color: #fff;
+    border: none;
+    font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.team-meet-btn .dot {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.team-meet-btn:hover {
+    color: #ccc;
+}
+
+.team-contact-btn {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 0.8rem 1.5rem;
+    font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.team-contact-btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.team-review-content {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.team-member-photo {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.team-member-photo img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
+}
+
+.team-member-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.team-member-info h3 {
+    font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+}
+
+.team-member-info h4 {
+    font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #ccc;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin: 0;
+}
+
+.team-member-info p {
+    font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ccc;
+    margin: 0;
+    max-width: 450px;
+}
+
+.team-navigation {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.team-nav-btn {
+    background: transparent;
+    color: #fff;
+    border: none;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.team-nav-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.team-nav-btn i {
+    font-size: 1.2rem;
+}
+
+.team-photos-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.team-photo-item {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.team-photo-item.active {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.team-photo-item img {
+    width: 136px;
+    height: 136px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+
+.team-photo-item:hover img {
+    filter: grayscale(0%);
+}
+
+.team-photo-item.active img {
+    filter: grayscale(0%);
+}
+
+/* Responsive Design for Meet The Team Section */
+@media (max-width: 768px) {
+    .team-container {
+        padding: 0 20px;
+    }
+    
+    .team-review-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .team-actions {
+        grid-row: 1;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 2rem;
+        justify-self: center;
+    }
+    
+    .team-member-photo img {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .team-member-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .team-navigation {
+        justify-content: center;
+    }
+    
+    .team-photos-row {
+        gap: 1rem;
+    }
+    
+    .team-photo-item img {
+        width: 102px;
+        height: 102px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-member-photo img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .team-member-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .team-member-info p {
+        font-size: 0.9rem;
+    }
+    
+    .team-photos-row {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .team-photo-item img {
+        width: 85px;
+        height: 85px;
+    }
+}
+
 /* Footer */
 .footer {
     background: #fff;
@@ -1640,6 +1963,15 @@ body {
     .hero-title {
         font-size: 3.8rem;
         letter-spacing: 0.3em;
+    }
+    
+    #portfolio-hero .hero-title {
+        font-size: 3rem;
+    }
+    
+    #portfolio-hero {
+        height: 45vh;
+        min-height: 350px;
     }
 
     .intro-text h2 {
@@ -1851,6 +2183,20 @@ body {
     .hero-title {
         font-size: 2.5rem;
         letter-spacing: 0.2em;
+    }
+    
+    #portfolio-hero .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    #portfolio-hero {
+        height: 40vh;
+        min-height: 300px;
+    }
+    
+    #portfolio-hero .hero-contact-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.85rem;
     }
 
     .introduction {
@@ -2067,12 +2413,19 @@ body {
         justify-content: center;
         align-items: center;
         gap: 1rem;
+        text-align: center;
+    }
+
+    .sidebar-title-container {
+        justify-content: center;
+        align-items: center;
     }
 
     .sidebar-title {
         writing-mode: initial;
         text-orientation: initial;
         font-size: 0.8rem;
+        text-align: center;
     }
 
     .sidebar-contact-btn {
@@ -2080,6 +2433,7 @@ body {
         text-orientation: initial;
         padding: 0.6rem 1rem;
         font-size: 0.7rem;
+        text-align: center;
     }
 
     .gallery-nav {
@@ -2093,6 +2447,21 @@ body {
         font-size: 2.2rem;
         letter-spacing: 0.15em;
         margin-bottom: 1rem;
+    }
+    
+    #portfolio-hero .hero-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    #portfolio-hero {
+        height: 35vh;
+        min-height: 250px;
+    }
+    
+    #portfolio-hero .hero-contact-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
     }
 
     .hero-subtitle {
@@ -2196,6 +2565,86 @@ body {
         padding: 0.8rem 1.5rem;
         min-height: 100px;
         line-height: 1.1;
+    }
+    
+    .category-section {
+        height: 250px;
+    }
+    
+    .portfolio-categories {
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .category-divider {
+        width: auto;
+        height: 24px;
+        background: #fff;
+        flex-shrink: 0;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .category-overlay h3 {
+        font-size: 18pt;
+        padding: 0.3rem 0.6rem;
+        letter-spacing: 1px;
+        max-width: 90%;
+    }
+    
+    /* Gallery sidebar styles for mobile */
+    .gallery-sidebar {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        min-height: 120px;
+        margin-top: 2rem;
+        padding: 1rem 2rem;
+        min-width: unset;
+    }
+
+    .sidebar-content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .sidebar-title-container {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sidebar-title {
+        writing-mode: initial;
+        text-orientation: initial;
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    .sidebar-contact-btn {
+        writing-mode: initial;
+        text-orientation: initial;
+        padding: 0.6rem 1rem;
+        font-size: 0.7rem;
+        text-align: center;
+    }
+
+    .gallery-nav {
+        justify-content: center;
+        gap: 3rem;
+    }
+    
+
+}
+
+@media (max-width: 360px) {
+    .category-overlay h3 {
+        font-size: 16pt;
+        padding: 0.3rem 0.6rem;
+        max-width: 95%;
     }
 }
 
@@ -2389,7 +2838,9 @@ html {
     align-items: stretch;
     gap: 0;
     margin-top: 3rem;
-    height: 400px;
+    height: 446px;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
 }
 
 .category-section {
@@ -2401,7 +2852,7 @@ html {
     position: relative;
     height: 100%;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 0;
 }
 
 .category-image img {
@@ -2417,29 +2868,36 @@ html {
 
 .category-overlay {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-    padding: 2rem;
+    bottom: 0;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .category-overlay h3 {
     color: #fff;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: 2px;
+    font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 27pt;
+    font-weight: 400;
+    letter-spacing: 7.2px;
     text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.45);
+    border: 2px solid #ffffff;
+    padding: 0.15rem 0.7rem;
+    text-align: center;
+    backdrop-filter: blur(15px);
+    max-width: 80%;
 }
 
 .category-divider {
-    width: 4px;
-    background: linear-gradient(to bottom, #333, #666, #333);
-    margin: 0 2rem;
-    border-radius: 2px;
+    width: 24px;
+    background: #fff;
+    flex-shrink: 0;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
@@ -2459,18 +2917,411 @@ html {
     .portfolio-categories {
         flex-direction: column;
         height: auto;
-        gap: 2rem;
+        gap: 0;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
     }
     
     .category-section {
-        height: 250px;
+        height: 268px;
     }
     
     .category-divider {
-        display: none;
+        width: auto;
+        height: 24px;
+        background: #fff;
+        flex-shrink: 0;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
     }
     
     .category-overlay h3 {
-        font-size: 1.2rem;
+        font-size: 14.5pt;
+        padding: 0.1rem 0.6rem;
+        max-width: 85%;
+    }
+}
+
+@media (max-width: 600px) {
+    .category-overlay h3 {
+        font-size: 17pt;
+        padding: 0.1rem 0.6rem;
+        max-width: 85%;
+    }
+}
+
+/* Steel Works Page Styles */
+#steel-works-hero {
+    height: 50vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#steel-works-hero .hero-content {
+    text-align: center;
+    z-index: 2;
+    color: #fff;
+}
+
+#steel-works-hero .hero-title {
+    font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#steel-works-hero .hero-subtitle {
+    font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    margin: 0 auto 2.5rem auto;
+    opacity: 0.95;
+    max-width: 600px;
+    text-align: center;
+}
+
+#steel-works-hero .hero-contact-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(15px);
+    border-radius: 2px;
+}
+
+#steel-works-hero .hero-contact-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+#steel-works-hero .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+}
+
+.steel-works-introduction {
+    background: #F8F8F8;
+    padding: 80px 0;
+}
+
+.steel-works-intro-top {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.intro-large-text {
+    flex: 2;
+    display: flex;
+    align-items: center;
+}
+
+.intro-large-text h2 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #333;
+    margin: 0;
+}
+
+.intro-divider {
+    width: 100px;
+    height: 2px;
+    background-color: #333;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+.intro-small-text {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.intro-small-text p {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+
+.steel-works-intro-bottom {
+    display: flex;
+    align-items: stretch;
+    gap: 60px;
+}
+
+.intro-image-section {
+    flex: 1;
+    position: relative;
+}
+
+.intro-image-section img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.intro-image-overlay {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
+    padding: 25px 30px;
+    max-width: 280px;
+    border: 2px solid #ffffff;
+    backdrop-filter: blur(15px);
+}
+
+.intro-image-overlay h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    letter-spacing: 1px;
+}
+
+.intro-image-overlay p {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.intro-content-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+
+.intro-content-section h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #333;
+    margin: 0 0 30px 0;
+}
+
+.intro-content-section p {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #666;
+    margin: 0 0 20px 0;
+}
+
+.steel-works-contact-btn {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    margin-top: 20px;
+    align-self: flex-start;
+}
+
+.steel-works-contact-btn:hover {
+    background: #555;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design for Steel Works */
+@media (max-width: 1024px) {
+    #steel-works-hero .hero-title {
+        font-size: 3rem;
+    }
+    
+    #steel-works-hero {
+        height: 45vh;
+        min-height: 350px;
+    }
+    
+    .steel-works-intro-top {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 60px;
+        align-items: center;
+    }
+    
+    .intro-divider {
+        width: 80px;
+        height: 2px;
+    }
+    
+    .intro-large-text h2 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    
+    .intro-small-text {
+        text-align: center;
+        margin-top: 0;
+    }
+    
+    .steel-works-intro-bottom {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .intro-content-section {
+        padding-left: 0;
+    }
+    
+    .intro-content-section h3 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #steel-works-hero .hero-title {
+        font-size: 2.8rem;
+        letter-spacing: 0.25em;
+        margin-bottom: 1.2rem;
+    }
+    
+    #steel-works-hero {
+        height: 40vh;
+        min-height: 300px;
+    }
+    
+    #steel-works-hero .hero-contact-btn {
+        padding: 0.7rem 1.8rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+    }
+    
+    .steel-works-introduction {
+        padding: 60px 0;
+    }
+    
+    .steel-works-intro-top {
+        margin-bottom: 40px;
+        gap: 20px;
+    }
+    
+    .intro-divider {
+        width: 60px;
+    }
+    
+    .intro-large-text h2 {
+        font-size: 2rem;
+    }
+    
+    .intro-content-section h3 {
+        font-size: 1.8rem;
+    }
+    
+    .intro-image-overlay {
+        bottom: 20px;
+        left: 20px;
+        padding: 20px;
+        max-width: 250px;
+    }
+    
+    .intro-image-overlay h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #steel-works-hero .hero-title {
+        font-size: 2.2rem;
+        letter-spacing: 0.2em;
+        margin-bottom: 1rem;
+    }
+    
+    #steel-works-hero {
+        height: 35vh;
+        min-height: 280px;
+    }
+    
+    #steel-works-hero .hero-subtitle {
+        font-size: 0.95rem;
+        letter-spacing: 0.06em;
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+    }
+    
+    #steel-works-hero .hero-contact-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+    }
+    
+    .steel-works-introduction {
+        padding: 40px 0;
+    }
+    
+    .steel-works-intro-top {
+        gap: 15px;
+    }
+    
+    .intro-divider {
+        width: 50px;
+    }
+    
+    .intro-large-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .intro-content-section h3 {
+        font-size: 1.5rem;
+    }
+    
+    .intro-image-overlay {
+        bottom: 15px;
+        left: 15px;
+        padding: 15px;
+        max-width: 200px;
+    }
+    
+    .intro-image-overlay h3 {
+        font-size: 1.1rem;
+    }
+    
+    .intro-image-overlay p {
+        font-size: 0.9rem;
+    }
+    
+    .steel-works-contact-btn {
+        width: 100%;
+        text-align: center;
     }
 } 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Modern Metals</title>
+    <title>Steel-Scapes - Modern Metals</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Neucha:wght@400&display=swap" rel="stylesheet">
@@ -66,10 +66,11 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="portfolio-hero" class="hero" style="background-image: url('assets/home/DJI_0596 1.jpg');">
+    <section id="steel-works-hero" class="hero" style="background-image: url('assets/steel works/hero.png');">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title">PORTFOLIO</h1>
+            <h1 class="hero-title">STEEL-SCAPES</h1>
+            <p class="hero-subtitle">The art of using steel as a hardscape</p>
             <button class="hero-contact-btn" onclick="openContactModal()">CONTACT US</button>
         </div>
         <div class="scroll-indicator">
@@ -78,102 +79,34 @@
     </section>
 
     <!-- Introduction Section -->
-    <section class="introduction">
+    <section class="steel-works-introduction">
         <div class="container">
-            <!-- Top Section: Quote and Text -->
-            <div class="intro-top">
-                <div class="intro-text">
-                    <div class="studio-tag">
-                        <span>• PORTFOLIO</span>
-                    </div>
-                    <h2>Metal-Scape artists excited about craftsmanship, sustainable landscapes, and durable materials.</h2>
-                    <a href="#" class="read-more">view projects</a>
+            <!-- Upper Section: Large text left, thin bar middle, small text right -->
+            <div class="steel-works-intro-top">
+                <div class="intro-large-text">
+                    <h2>Durable, Aesthetic, & Functional</h2>
                 </div>
-                <div class="intro-image">
-                    <div class="intro-image-text">
-                        <p>Starting your landscape from scratch? We can help from design to install making it simple and easy.</p>
-                    </div>
+                <div class="intro-divider"></div>
+                <div class="intro-small-text">
+                    <p>How can steel-scape be incorporated into your landscape or outdoor living space? Contact Us to find out how.</p>
                 </div>
             </div>
             
-            <!-- Bottom Section: Residential and Commercial Images -->
-            <div class="portfolio-categories">
-                <div class="category-section">
-                    <div class="category-image">
-                        <img src="assets/home/section2/h1-img-01.jpg.jpg" alt="Residential Projects" />
-                        <div class="category-overlay">
-                            <h3>RESIDENTIAL</h3>
-                        </div>
+            <!-- Lower Section: Image left with text box, content right -->
+            <div class="steel-works-intro-bottom">
+                <div class="intro-image-section">
+                    <img src="assets/steel works/intro.png" alt="Steel Works Introduction" />
+                    <div class="intro-image-overlay">
+                        <h3>NEED SOMETHING CUSTOM?</h3>
+                        <p>We Can Help.</p>
                     </div>
                 </div>
                 
-                <div class="category-divider"></div>
-                
-                <div class="category-section">
-                    <div class="category-image">
-                        <img src="assets/home/gallery/project4.jpg" alt="Commercial Projects" />
-                        <div class="category-overlay">
-                            <h3>COMMERCIAL</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Meet The Team Section -->
-    <section class="meet-team-section">
-        <div class="team-container">
-            <!-- Main Team Review Content -->
-            <div class="team-review-content">
-                <!-- Team Member Photo -->
-                <div class="team-member-photo">
-                    <img id="currentTeamPhoto" src="assets/home/team/Gabe.png" alt="Gabriel Spotts">
-                </div>
-
-                <!-- Team Member Info -->
-                <div class="team-member-info">
-                    <h3 id="currentTeamName">Gabriel Spotts</h3>
-                    <h4 id="currentTeamTitle">OWNER / OPERATOR</h4>
-                    <p id="currentTeamDescription">
-                        Simply email your plans or job details to receive a quote and ask about our contractor discount. 
-                        Gabriel brings years of experience in metal fabrication and landscape design, ensuring every project 
-                        meets the highest standards of quality and craftsmanship.
-                    </p>
-
-                    <!-- Navigation Arrows -->
-                    <div class="team-navigation">
-                        <button class="team-nav-btn" id="prevTeamBtn" onclick="changeTeamMember(-1)">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button class="team-nav-btn" id="nextTeamBtn" onclick="changeTeamMember(1)">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Right Side Buttons -->
-                <div class="team-actions">
-                    <button class="team-meet-btn">
-                        <span class="dot">•</span> MEET THE TEAM
-                    </button>
-                    <button class="team-contact-btn" onclick="openContactModal()">CONTACT US</button>
-                </div>
-            </div>
-
-            <!-- Team Photos Row -->
-            <div class="team-photos-row">
-                <div class="team-photo-item" data-index="0">
-                    <img src="assets/home/team/Gabe.png" alt="Gabriel Spotts">
-                </div>
-                <div class="team-photo-item" data-index="1">
-                    <img src="assets/home/team/Dillon.png" alt="Dillon Flinders">
-                </div>
-                <div class="team-photo-item" data-index="2">
-                    <img src="assets/home/team/Monika.png" alt="Monika Robinson">
-                </div>
-                <div class="team-photo-item" data-index="3">
-                    <img src="assets/home/team/Guillermo.png" alt="Guillermo Medici">
+                <div class="intro-content-section">
+                    <h3>Built to Last. Designed to Impress.</h3>
+                    <p>Steel-scapes are where strength meets beauty. Whether you're designing a bold entryway, sculptural garden features, custom retaining walls, or sleek privacy screens, steel offers unmatched durability with a clean, modern aesthetic. At Modern Metals Utah, we craft custom steel elements that elevate outdoor spaces, bringing structure, artistry, and longevity to your landscape.</p>
+                    <p>Perfect for both residential and commercial applications, our steel-scapes are engineered to withstand the elements while making a visual impact. Let us help you transform your yard, patio, or commercial exterior into something truly striking and built to last.</p>
+                    <button class="steel-works-contact-btn" onclick="openContactModal()">CONTACT US</button>
                 </div>
             </div>
         </div>

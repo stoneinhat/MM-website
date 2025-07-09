@@ -1064,3 +1064,102 @@ class TestimonialsCycler {
 document.addEventListener('DOMContentLoaded', () => {
     new TestimonialsCycler();
 });
+
+// Team Member Data and Functionality
+const teamData = [
+    {
+        name: "Gabriel Spotts",
+        title: "OWNER / OPERATOR",
+        photo: "assets/home/team/Gabe.png",
+        description: "Gabriel brings years of experience in metal fabrication and landscape design, ensuring every project meets the highest standards of quality and craftsmanship. His vision for Modern Metals Utah has transformed countless outdoor spaces into functional works of art."
+    },
+    {
+        name: "Dillon Flinders",
+        title: "OWNER / PROJECT MANAGER",
+        photo: "assets/home/team/Dillon.png",
+        description: "Dillon oversees project coordination and client relations, ensuring seamless communication from initial consultation through final installation. His expertise in project management keeps every job on schedule and within budget while maintaining exceptional quality standards."
+    },
+    {
+        name: "Monika Robinson",
+        title: "DESIGN MANAGER",
+        photo: "assets/home/team/Monika.png",
+        description: "Monika leads our design team with a keen eye for aesthetics and functionality. She specializes in creating custom metal landscape solutions that perfectly complement each client's unique vision and outdoor space requirements."
+    },
+    {
+        name: "Guillermo Medici",
+        title: "STEEL SCAPE ARTIST",
+        photo: "assets/home/team/Guillermo.png",
+        description: "Guillermo is our master craftsman, specializing in the creation of intricate steel landscape features. His artistic vision and technical expertise bring even the most complex designs to life with precision and attention to detail."
+    }
+];
+
+let currentTeamIndex = 0;
+
+function changeTeamMember(direction) {
+    currentTeamIndex += direction;
+    
+    // Handle wrap-around
+    if (currentTeamIndex >= teamData.length) {
+        currentTeamIndex = 0;
+    } else if (currentTeamIndex < 0) {
+        currentTeamIndex = teamData.length - 1;
+    }
+    
+    updateTeamDisplay();
+}
+
+function updateTeamDisplay() {
+    const currentMember = teamData[currentTeamIndex];
+    
+    // Check if elements exist before updating
+    const photoElement = document.getElementById('currentTeamPhoto');
+    const nameElement = document.getElementById('currentTeamName');
+    const titleElement = document.getElementById('currentTeamTitle');
+    const descriptionElement = document.getElementById('currentTeamDescription');
+    
+    if (photoElement) {
+        photoElement.src = currentMember.photo;
+        photoElement.alt = currentMember.name;
+    }
+    
+    if (nameElement) {
+        nameElement.textContent = currentMember.name;
+    }
+    
+    if (titleElement) {
+        titleElement.textContent = currentMember.title;
+    }
+    
+    if (descriptionElement) {
+        descriptionElement.textContent = currentMember.description;
+    }
+    
+    // Update active state of bottom photos
+    document.querySelectorAll('.team-photo-item').forEach((item, index) => {
+        if (index === currentTeamIndex) {
+            item.classList.add('active');
+        } else {
+            item.classList.remove('active');
+        }
+    });
+}
+
+function initializeTeamSection() {
+    // Set up click handlers for bottom photos
+    document.querySelectorAll('.team-photo-item').forEach((item, index) => {
+        item.addEventListener('click', () => {
+            currentTeamIndex = index;
+            updateTeamDisplay();
+        });
+    });
+    
+    // Initialize display
+    updateTeamDisplay();
+}
+
+// Initialize team section when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelector('.meet-team-section')) {
+        initializeTeamSection();
+    }
+});
