@@ -2973,7 +2973,7 @@ html {
     font-size: 3.5rem;
     font-weight: 400;
     letter-spacing: 0.3em;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.25rem;
     text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -3023,36 +3023,48 @@ html {
 }
 
 .steel-works-introduction {
-    background: #F8F8F8;
-    padding: 80px 0;
+    background: #FFFFFF;
+    padding: 120px 0 80px 0;
+}
+
+.steel-works-introduction .container {
+    max-width: none;
+    padding: 0;
+    margin: 0;
 }
 
 .steel-works-intro-top {
     display: flex;
     align-items: center;
     gap: 40px;
-    margin-bottom: 80px;
+    margin-bottom: 120px;
+    padding: 0 122px;
 }
 
 .intro-large-text {
-    flex: 2;
+    flex: 1;
     display: flex;
     align-items: center;
 }
 
 .intro-large-text h2 {
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 3rem;
+    font-size: 2.4rem;
     font-weight: 700;
     line-height: 1.2;
     color: #333;
     margin: 0;
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .intro-divider {
-    width: 100px;
+    width: 196px;
     height: 2px;
     background-color: #333;
+    opacity: 0.6;
     flex-shrink: 0;
     align-self: center;
 }
@@ -3069,12 +3081,14 @@ html {
     line-height: 1.6;
     color: #666;
     margin: 0;
+    text-align: right;
 }
 
 .steel-works-intro-bottom {
     display: flex;
     align-items: stretch;
-    gap: 60px;
+    gap: 0px;
+    padding: 0 40px;
 }
 
 .intro-image-section {
@@ -3090,22 +3104,22 @@ html {
 
 .intro-image-overlay {
     position: absolute;
-    bottom: 30px;
-    left: 30px;
-    background: rgba(0, 0, 0, 0.45);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
     color: white;
-    padding: 25px 30px;
-    max-width: 280px;
+    padding: 15px 18px;
     border: 2px solid #ffffff;
     backdrop-filter: blur(15px);
 }
 
 .intro-image-overlay h3 {
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 300;
     margin: 0 0 10px 0;
-    letter-spacing: 1px;
+    letter-spacing: 15px;
 }
 
 .intro-image-overlay p {
@@ -3115,17 +3129,25 @@ html {
     opacity: 0.9;
 }
 
+.intro-spacer {
+    width: 350px;
+    flex-shrink: 0;
+}
+
 .intro-content-section {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding-left: 20px;
+    text-align: right;
+    max-width: 450px;
+    margin-left: auto;
 }
 
 .intro-content-section h3 {
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2.0rem;
     font-weight: 700;
     line-height: 1.2;
     color: #333;
@@ -3134,7 +3156,7 @@ html {
 
 .intro-content-section p {
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 1rem;
+    font-size: 0.8rem;
     line-height: 1.8;
     color: #666;
     margin: 0 0 20px 0;
@@ -3154,7 +3176,7 @@ html {
     transition: all 0.3s ease;
     border-radius: 4px;
     margin-top: 20px;
-    align-self: flex-start;
+    align-self: flex-end;
 }
 
 .steel-works-contact-btn:hover {
@@ -3178,6 +3200,7 @@ html {
         gap: 30px;
         margin-bottom: 60px;
         align-items: center;
+        padding: 0 30px;
     }
     
     .intro-divider {
@@ -3198,14 +3221,25 @@ html {
     .steel-works-intro-bottom {
         flex-direction: column;
         gap: 40px;
+        padding: 0 30px;
+    }
+    
+    .intro-spacer {
+        display: none;
     }
     
     .intro-content-section {
         padding-left: 0;
+        text-align: right;
+        max-width: 400px;
     }
     
     .intro-content-section h3 {
-        font-size: 2rem;
+        font-size: 2.0rem;
+    }
+    
+    .intro-content-section p {
+        font-size: 0.8rem;
     }
 }
 
@@ -3234,6 +3268,7 @@ html {
     .steel-works-intro-top {
         margin-bottom: 40px;
         gap: 20px;
+        padding: 0 20px;
     }
     
     .intro-divider {
@@ -3245,18 +3280,29 @@ html {
     }
     
     .intro-content-section h3 {
-        font-size: 1.8rem;
+        font-size: 1.75rem;
+    }
+    
+    .intro-content-section p {
+        font-size: 0.7rem;
+    }
+    
+    .steel-works-intro-bottom {
+        padding: 0 20px;
     }
     
     .intro-image-overlay {
-        bottom: 20px;
-        left: 20px;
-        padding: 20px;
-        max-width: 250px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 12px;
     }
     
     .intro-image-overlay h3 {
+        font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
         font-size: 1.3rem;
+        font-weight: 300;
+        letter-spacing: 15px;
     }
 }
 
@@ -3291,6 +3337,7 @@ html {
     
     .steel-works-intro-top {
         gap: 15px;
+        padding: 0 15px;
     }
     
     .intro-divider {
@@ -3305,15 +3352,30 @@ html {
         font-size: 1.5rem;
     }
     
+    .intro-content-section p {
+        font-size: 0.6rem;
+    }
+    
+    .intro-content-section {
+        max-width: 320px;
+    }
+    
+    .steel-works-intro-bottom {
+        padding: 0 15px;
+    }
+    
     .intro-image-overlay {
-        bottom: 15px;
-        left: 15px;
-        padding: 15px;
-        max-width: 200px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 9px;
     }
     
     .intro-image-overlay h3 {
+        font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
         font-size: 1.1rem;
+        font-weight: 300;
+        letter-spacing: 10px;
     }
     
     .intro-image-overlay p {
