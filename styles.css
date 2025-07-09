@@ -2962,6 +2962,155 @@ html {
     background-repeat: no-repeat;
 }
 
+/* Meet The Team Page Styles */
+#meet-team-hero {
+    height: 50vh;
+    min-height: 400px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#meet-team-hero .hero-content {
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    padding: 2rem;
+}
+
+#meet-team-hero .hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#meet-team-hero .hero-contact-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(15px);
+    border-radius: 2px;
+}
+
+#meet-team-hero .hero-contact-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+#meet-team-hero .scroll-indicator {
+    bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+/* Team Member Sections */
+.team-member-section {
+    background: #EEEEE9;
+    padding: 60px 0;
+}
+
+.team-member-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.team-member-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.team-member-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.team-member-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+}
+
+.team-member-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 1.5rem 0;
+}
+
+.team-member-description {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.team-member-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-member-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+/* Apply grayscale filter to specific team members */
+.team-member-section:nth-of-type(3) .team-member-image img, /* Gabriel */
+.team-member-section:nth-of-type(4) .team-member-image img, /* Dillon */
+.team-member-section:nth-of-type(5) .team-member-image img { /* Monika */
+    filter: grayscale(100%);
+}
+
+/* Keep Guillermo in color - no filter applied to nth-of-type(6) */
+
+/* Flip layout for Gabriel and Monika - Image left, Text right */
+.team-member-section:nth-of-type(3) .team-member-text, /* Gabriel */
+.team-member-section:nth-of-type(5) .team-member-text { /* Monika */
+    order: 2;
+}
+
+.team-member-section:nth-of-type(3) .team-member-image, /* Gabriel */
+.team-member-section:nth-of-type(5) .team-member-image { /* Monika */
+    order: 1;
+}
+
+/* White background for Gabriel and Monika sections */
+.team-member-section:nth-of-type(3), /* Gabriel */
+.team-member-section:nth-of-type(5) { /* Monika */
+    background: #FFFFFF;
+}
+
+/* Right-align text for Dillon and Guillermo sections */
+.team-member-section:nth-of-type(4) .team-member-text, /* Dillon */
+.team-member-section:nth-of-type(6) .team-member-text { /* Guillermo */
+    text-align: right;
+}
+
 #steel-works-hero .hero-content {
     text-align: center;
     z-index: 2;
@@ -3195,6 +3344,27 @@ html {
         min-height: 350px;
     }
     
+    #meet-team-hero .hero-title {
+        font-size: 3rem;
+    }
+    
+    #meet-team-hero {
+        height: 45vh;
+        min-height: 350px;
+    }
+    
+    .team-member-section {
+        padding: 50px 0;
+    }
+    
+    .team-member-content {
+        gap: 36px;
+    }
+    
+    .team-member-name {
+        font-size: 2.2rem;
+    }
+    
     .steel-works-intro-top {
         flex-direction: column;
         gap: 30px;
@@ -3259,6 +3429,55 @@ html {
         padding: 0.7rem 1.8rem;
         font-size: 0.8rem;
         letter-spacing: 0.1em;
+    }
+    
+    #meet-team-hero .hero-title {
+        font-size: 2.8rem;
+        letter-spacing: 0.25em;
+        margin-bottom: 1.2rem;
+    }
+    
+    #meet-team-hero {
+        height: 40vh;
+        min-height: 300px;
+    }
+    
+    #meet-team-hero .hero-contact-btn {
+        padding: 0.7rem 1.8rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+    }
+    
+    .team-member-section {
+        padding: 40px 0;
+    }
+    
+    .team-member-container {
+        padding: 0 30px;
+    }
+    
+    .team-member-content {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        text-align: center;
+    }
+    
+    .team-member-name {
+        font-size: 2rem;
+    }
+    
+    .team-member-title {
+        font-size: 0.9rem;
+    }
+    
+    .team-member-description {
+        font-size: 0.95rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .team-member-image img {
+        max-width: 300px;
     }
     
     .steel-works-introduction {
@@ -3329,6 +3548,59 @@ html {
         padding: 0.6rem 1.5rem;
         font-size: 0.75rem;
         letter-spacing: 0.08em;
+    }
+    
+    #meet-team-hero .hero-title {
+        font-size: 2.2rem;
+        letter-spacing: 0.2em;
+        margin-bottom: 1rem;
+    }
+    
+    #meet-team-hero {
+        height: 35vh;
+        min-height: 280px;
+    }
+    
+    #meet-team-hero .hero-subtitle {
+        font-size: 0.95rem;
+        letter-spacing: 0.06em;
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+    }
+    
+    #meet-team-hero .hero-contact-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+    }
+    
+    .team-member-section {
+        padding: 30px 0;
+    }
+    
+    .team-member-container {
+        padding: 0 20px;
+    }
+    
+    .team-member-content {
+        gap: 18px;
+    }
+    
+    .team-member-name {
+        font-size: 1.8rem;
+    }
+    
+    .team-member-title {
+        font-size: 0.85rem;
+        letter-spacing: 1.5px;
+    }
+    
+    .team-member-description {
+        font-size: 0.9rem;
+    }
+    
+    .team-member-image img {
+        max-width: 280px;
     }
     
     .steel-works-introduction {

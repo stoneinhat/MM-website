@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Modern Metals</title>
+    <title>Meet The Team - Modern Metals</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Neucha:wght@400&display=swap" rel="stylesheet">
@@ -66,10 +66,11 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="portfolio-hero" class="hero" style="background-image: url('assets/home/DJI_0596 1.jpg');">
+    <section id="meet-team-hero" class="hero" style="background-image: url('assets/meet the team/DJI_0596 1.jpg');">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title">PORTFOLIO</h1>
+            <h1 class="hero-title">MEET THE TEAM</h1>
+            <p class="hero-subtitle"></p>
             <button class="hero-contact-btn" onclick="openContactModal()">CONTACT US</button>
         </div>
         <div class="scroll-indicator">
@@ -78,102 +79,80 @@
     </section>
 
     <!-- Introduction Section -->
-    <section class="introduction">
+    <section class="steel-works-introduction">
         <div class="container">
-            <!-- Top Section: Quote and Text -->
-            <div class="intro-top">
-                <div class="intro-text">
-                    <div class="studio-tag">
-                        <span>• PORTFOLIO</span>
-                    </div>
-                    <h2>Metal-Scape artists excited about craftsmanship, sustainable landscapes, and durable materials.</h2>
-                    <a href="#" class="read-more">view projects</a>
+            <!-- Upper Section: Large text left, thin bar middle, small text right -->
+            <div class="steel-works-intro-top">
+                <div class="intro-large-text">
+                    <h2>Craftsmen. Creatives.<br>Collaborators.</h2>
                 </div>
-                <div class="intro-image">
-                    <div class="intro-image-text">
-                        <p>Starting your landscape from scratch? We can help from design to install making it simple and easy.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Bottom Section: Residential and Commercial Images -->
-            <div class="portfolio-categories">
-                <div class="category-section">
-                    <div class="category-image">
-                        <img src="assets/home/section2/h1-img-01.jpg.jpg" alt="Residential Projects" />
-                        <div class="category-overlay">
-                            <h3>RESIDENTIAL</h3>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="category-divider"></div>
-                
-                <div class="category-section">
-                    <div class="category-image">
-                        <img src="assets/home/gallery/project4.jpg" alt="Commercial Projects" />
-                        <div class="category-overlay">
-                            <h3>COMMERCIAL</h3>
-                        </div>
-                    </div>
+                <div class="intro-divider"></div>
+                <div class="intro-small-text">
+                    <p>Meet the team behind the steel. We're a crew of experienced fabricators, designers, and builders who are passionate about creating outdoor spaces that are as functional as they are beautiful. Whether it's a custom fire feature or a full-scale steel-scape, we bring precision, pride, and personality to every project.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Meet The Team Section -->
-    <section class="meet-team-section">
-        <div class="team-container">
-            <!-- Main Team Review Content -->
-            <div class="team-review-content">
-                <!-- Team Member Photo -->
-                <div class="team-member-photo">
-                    <img id="currentTeamPhoto" src="assets/home/team/Gabe.png" alt="Gabriel Spotts">
+    <!-- Gabriel Spotts Section -->
+    <section class="team-member-section">
+        <div class="team-member-container">
+            <div class="team-member-content">
+                <div class="team-member-text">
+                    <h3 class="team-member-name">Gabriel Spotts</h3>
+                    <h4 class="team-member-title">OWNER / OPERATOR</h4>
+                    <p class="team-member-description">Simply email your plans or job details to receive a quote and ask about our contractor discount.</p>
                 </div>
-
-                <!-- Team Member Info -->
-                <div class="team-member-info">
-                    <h3 id="currentTeamName">Gabriel Spotts</h3>
-                    <h4 id="currentTeamTitle">OWNER / OPERATOR</h4>
-                    <p id="currentTeamDescription">
-                        Simply email your plans or job details to receive a quote and ask about our contractor discount. 
-                        Gabriel brings years of experience in metal fabrication and landscape design, ensuring every project 
-                        meets the highest standards of quality and craftsmanship.
-                    </p>
-
-                    <!-- Navigation Arrows -->
-                    <div class="team-navigation">
-                        <button class="team-nav-btn" id="prevTeamBtn" onclick="changeTeamMember(-1)">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                        <button class="team-nav-btn" id="nextTeamBtn" onclick="changeTeamMember(1)">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Right Side Buttons -->
-                <div class="team-actions">
-                    <button class="team-meet-btn">
-                        <span class="dot">•</span> MEET THE TEAM
-                    </button>
-                    <button class="team-contact-btn" onclick="openContactModal()">CONTACT US</button>
+                <div class="team-member-image">
+                    <img src="assets/meet the team/Gabe.png" alt="Gabriel Spotts - Owner / Operator">
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Team Photos Row -->
-            <div class="team-photos-row">
-                <div class="team-photo-item" data-index="0">
-                    <img src="assets/home/team/Gabe.png" alt="Gabriel Spotts">
+    <!-- Dillon Flinders Section -->
+    <section class="team-member-section">
+        <div class="team-member-container">
+            <div class="team-member-content">
+                <div class="team-member-text">
+                    <h3 class="team-member-name">Dillon Flinders</h3>
+                    <h4 class="team-member-title">OWNER / PROJECT MANAGER</h4>
+                    <p class="team-member-description">Simply email your plans or job details to receive a quote and ask about our contractor discount.</p>
                 </div>
-                <div class="team-photo-item" data-index="1">
-                    <img src="assets/home/team/Dillon.png" alt="Dillon Flinders">
+                <div class="team-member-image">
+                    <img src="assets/meet the team/Dillon.png" alt="Dillon Flinders - Owner / Project Manager">
                 </div>
-                <div class="team-photo-item" data-index="2">
-                    <img src="assets/home/team/Monika.png" alt="Monika Robinson">
+            </div>
+        </div>
+    </section>
+
+    <!-- Monika Robinson Section -->
+    <section class="team-member-section">
+        <div class="team-member-container">
+            <div class="team-member-content">
+                <div class="team-member-text">
+                    <h3 class="team-member-name">Monika Robinson</h3>
+                    <h4 class="team-member-title">DESIGN MANAGER</h4>
+                    <p class="team-member-description">Simply email your plans or job details to receive a quote and ask about our contractor discount.</p>
                 </div>
-                <div class="team-photo-item" data-index="3">
-                    <img src="assets/home/team/Guillermo.png" alt="Guillermo Medici">
+                <div class="team-member-image">
+                    <img src="assets/meet the team/Monika.png" alt="Monika Robinson - Design Manager">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guillermo Medici Section -->
+    <section class="team-member-section">
+        <div class="team-member-container">
+            <div class="team-member-content">
+                <div class="team-member-text">
+                    <h3 class="team-member-name">Guillermo Medici</h3>
+                    <h4 class="team-member-title">STEEL SCAPE ARTIST</h4>
+                    <p class="team-member-description">Simply email your plans or job details to receive a quote and ask about our contractor discount.</p>
+                </div>
+                <div class="team-member-image">
+                    <img src="assets/meet the team/Guillermo.png" alt="Guillermo Medici - Steel Scape Artist">
                 </div>
             </div>
         </div>
