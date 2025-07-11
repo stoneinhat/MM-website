@@ -317,27 +317,13 @@ class WorksDetailNavigation {
 // Sequential Step Animation
 class StepAnimation {
     constructor() {
-        this.steps = document.querySelectorAll('.fade-in-step');
-        this.commercialText = document.getElementById('commercial-text');
-        this.residentialText = document.getElementById('residential-text');
+        this.steps = document.querySelectorAll('.step-item');
+        this.serviceColumns = document.querySelectorAll('.service-column p');
         this.observer = null;
-        this.animationDelay = 1400; // 1400ms delay between each step (slowed down more)
+        this.animationDelay = 800; // 800ms delay between each step
         this.currentStep = 0;
         this.activeStep = null; // Track which step is actively selected (clicked)
-        this.textContent = {
-            1: {
-                commercial: "Simply email your plans or job details to receive a quote and ask about our contractor discount.",
-                residential: "Starting your landscape from scratch? We can help from design to install."
-            },
-            2: {
-                commercial: "Our designs for commercial space vary widely in style, but are consistently great in quality",
-                residential: "A beautiful home is one click away"
-            },
-            3: {
-                commercial: "Our team will assemble the best contractors for your build.",
-                residential: "Your home, our dedicated project."
-            }
-        };
+        this.isInitialized = false;
         this.init();
     }
     
@@ -345,12 +331,14 @@ class StepAnimation {
         if (this.steps.length > 0) {
             this.setupIntersectionObserver();
             this.setupStepHoverListeners();
-            // Initialize with Step 1 text showing
+            // Initialize service columns to be ready for animation
             setTimeout(() => {
-                if (this.commercialText && this.residentialText) {
-                    this.commercialText.classList.add('fade-in');
-                    this.residentialText.classList.add('fade-in');
+                if (this.serviceColumns.length > 0) {
+                    this.serviceColumns.forEach(column => {
+                        column.classList.add('fade-in');
+                    });
                 }
+                this.isInitialized = true;
             }, 100);
         }
     }
@@ -386,22 +374,17 @@ class StepAnimation {
     }
     
     updateText(stepNumber) {
-        // Fade out current text
-        if (this.commercialText && this.residentialText) {
-            this.commercialText.classList.remove('fade-in');
-            this.residentialText.classList.remove('fade-in');
-            
-            // Update text content and fade in after a short delay
-            setTimeout(() => {
-                this.commercialText.textContent = this.textContent[stepNumber].commercial;
-                this.residentialText.textContent = this.textContent[stepNumber].residential;
-                
-                // Fade in new text
+        // Animate service columns when steps are revealed
+        if (this.serviceColumns.length > 0 && this.isInitialized) {
+            this.serviceColumns.forEach((column, index) => {
+                // Add a small delay between columns for a staggered effect
                 setTimeout(() => {
-                    this.commercialText.classList.add('fade-in');
-                    this.residentialText.classList.add('fade-in');
-                }, 100);
-            }, 200);
+                    column.classList.remove('fade-in');
+                    setTimeout(() => {
+                        column.classList.add('fade-in');
+                    }, 100);
+                }, index * 150);
+            });
         }
     }
     
@@ -452,10 +435,12 @@ class StepAnimation {
             }
         });
         
-        // Update text content immediately
-        if (this.commercialText && this.residentialText) {
-            this.commercialText.textContent = this.textContent[stepNumber].commercial;
-            this.residentialText.textContent = this.textContent[stepNumber].residential;
+        // Highlight service columns on hover
+        if (this.serviceColumns.length > 0) {
+            this.serviceColumns.forEach(column => {
+                column.style.opacity = '0.8';
+                column.style.transform = 'translateY(-2px)';
+            });
         }
     }
     
@@ -465,7 +450,15 @@ class StepAnimation {
             step.classList.remove('step-hovered', 'step-dimmed');
         });
         
-        // Restore text based on current animation state or active selection
+        // Reset service columns styling
+        if (this.serviceColumns.length > 0) {
+            this.serviceColumns.forEach(column => {
+                column.style.opacity = '';
+                column.style.transform = '';
+            });
+        }
+        
+        // Restore default state
         this.restoreDefaultState();
     }
     
@@ -489,10 +482,15 @@ class StepAnimation {
             }
         });
         
-        // Update text content immediately
-        if (this.commercialText && this.residentialText) {
-            this.commercialText.textContent = this.textContent[stepNumber].commercial;
-            this.residentialText.textContent = this.textContent[stepNumber].residential;
+        // Animate service columns when step is selected
+        if (this.serviceColumns.length > 0) {
+            this.serviceColumns.forEach((column, index) => {
+                setTimeout(() => {
+                    column.style.opacity = '1';
+                    column.style.transform = 'translateY(-5px)';
+                    column.style.transition = 'all 0.3s ease';
+                }, index * 100);
+            });
         }
     }
     
@@ -509,14 +507,13 @@ class StepAnimation {
     }
     
     restoreDefaultState() {
-        // Restore text based on current animation state
-        const currentAnimatedSteps = document.querySelectorAll('.step-item.fade-in').length;
-        if (currentAnimatedSteps > 0) {
-            const lastStepNumber = currentAnimatedSteps;
-            if (this.commercialText && this.residentialText) {
-                this.commercialText.textContent = this.textContent[lastStepNumber].commercial;
-                this.residentialText.textContent = this.textContent[lastStepNumber].residential;
-            }
+        // Reset service columns to default state
+        if (this.serviceColumns.length > 0) {
+            this.serviceColumns.forEach(column => {
+                column.style.opacity = '';
+                column.style.transform = '';
+                column.style.transition = '';
+            });
         }
     }
 }
@@ -1178,3 +1175,32 @@ document.addEventListener('DOMContentLoaded', () => {
         initializeTeamSection();
     }
 });
+
+// Initialize Introduction Widget Step Animation
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelector('.introduction .step-item')) {
+        new StepAnimation();
+    }
+});
+
+// Also initialize for dynamic content (Elementor editor)
+function initializeIntroductionWidgets() {
+    // Initialize step animations for introduction widgets
+    document.querySelectorAll('.introduction').forEach(intro => {
+        if (intro.querySelector('.step-item') && !intro.hasAttribute('data-step-animation-initialized')) {
+            new StepAnimation();
+            intro.setAttribute('data-step-animation-initialized', 'true');
+        }
+    });
+}
+
+// Re-initialize when content changes (for Elementor editor)
+if (typeof elementorFrontend !== 'undefined') {
+    elementorFrontend.hooks.addAction('frontend/element_ready/widget', function() {
+        setTimeout(initializeIntroductionWidgets, 100);
+    });
+}
+
+// Fallback for any other dynamic content loading
+document.addEventListener('DOMContentLoaded', initializeIntroductionWidgets);
+window.addEventListener('load', initializeIntroductionWidgets);

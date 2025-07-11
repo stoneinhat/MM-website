@@ -529,20 +529,7 @@ body {
     height: 60%;
 }
 
-.intro-top::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('assets/home/section2/unnamed.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.05;
-    z-index: -1;
-}
+/* Background image is now handled dynamically by the widget */
 
 .intro-top > * {
     position: relative;
