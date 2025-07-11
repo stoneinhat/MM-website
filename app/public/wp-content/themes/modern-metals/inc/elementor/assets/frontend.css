@@ -1,0 +1,53 @@
+/**
+ * Modern Metals Elementor Frontend Styles
+ * 
+ * Additional styles for Elementor widgets that extend the main theme styles
+ */
+
+/* Widget placeholder styles */
+.modern-metals-widget-placeholder {
+    padding: 2rem;
+    text-align: center;
+    background: #f5f5f5;
+    border: 2px dashed #ccc;
+    color: #666;
+    font-family: Arial, sans-serif;
+    border-radius: 4px;
+}
+
+/* Ensure Elementor widget compatibility */
+.elementor-widget-modern-metals-hero .hero {
+    position: relative;
+    margin: 0;
+}
+
+.elementor-widget-modern-metals-hero .hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modern Metals widget category styling */
+.elementor-element .elementor-widget-modern-metals-hero,
+.elementor-element .elementor-widget-modern-metals-introduction,
+.elementor-element .elementor-widget-modern-metals-gallery,
+.elementor-element .elementor-widget-modern-metals-accordion,
+.elementor-element .elementor-widget-modern-metals-team,
+.elementor-element .elementor-widget-modern-metals-testimonials,
+.elementor-element .elementor-widget-modern-metals-contact {
+    /* Common widget styling */
+}
+
+/* Fix for Elementor editor preview */
+.elementor-editor-active .hero {
+    position: relative !important;
+}
+
+/* Responsive fixes for widgets */
+@media (max-width: 768px) {
+    .modern-metals-widget-placeholder {
+        padding: 1rem;
+        font-size: 14px;
+    }
+} 

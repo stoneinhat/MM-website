@@ -169,4 +169,137 @@ function modern_metals_register_elementor_locations($elementor_theme_manager) {
     $elementor_theme_manager->register_location('footer');
 }
 add_action('elementor/theme/register_locations', 'modern_metals_register_elementor_locations');
+
+/**
+ * Initialize Modern Metals Elementor Widgets
+ */
+function modern_metals_init_elementor_widgets() {
+    // Only run if Elementor is loaded
+    if (!did_action('elementor/loaded')) {
+        return;
+    }
+    
+    // Debug: Check if this function is being called
+    error_log('Modern Metals: Initializing Elementor widgets');
+    
+    // Include the Elementor initialization file
+    $elementor_init_path = get_template_directory() . '/inc/elementor/elementor-init.php';
+    error_log('Modern Metals: Looking for file at: ' . $elementor_init_path);
+    
+    if (file_exists($elementor_init_path)) {
+        error_log('Modern Metals: Including Elementor init file');
+        require_once $elementor_init_path;
+    } else {
+        error_log('Modern Metals: Elementor init file not found at: ' . $elementor_init_path);
+    }
+}
+add_action('elementor/loaded', 'modern_metals_init_elementor_widgets');
+
+/**
+ * Register Modern Metals Elementor Widgets - FIXED TIMING
+ */
+function modern_metals_register_all_widgets($widgets_manager) {
+    error_log('Modern Metals: Widget registration hook fired');
+    
+    // Make sure we have Elementor
+    if (!defined('ELEMENTOR_VERSION')) {
+        error_log('Modern Metals: Elementor not available during widget registration');
+        return;
+    }
+    
+    // Include base widget if not already included
+    $base_widget_path = get_template_directory() . '/inc/elementor/widgets/base-widget.php';
+    if (!class_exists('Modern_Metals_Base_Widget')) {
+        if (file_exists($base_widget_path)) {
+            require_once $base_widget_path;
+            error_log('Modern Metals: Base widget included');
+        } else {
+            error_log('Modern Metals: Base widget not found');
+            return;
+        }
+    }
+    
+    // Include all widget files
+    $widget_files = [
+        'hero-widget.php',
+        'introduction-widget.php',
+        'gallery-widget.php',
+        'accordion-widget.php',
+        'team-widget.php',
+        'testimonials-widget.php',
+        'contact-widget.php'
+    ];
+    
+    $widgets_dir = get_template_directory() . '/inc/elementor/widgets/';
+    foreach ($widget_files as $file) {
+        $file_path = $widgets_dir . $file;
+        if (file_exists($file_path)) {
+            require_once $file_path;
+            error_log('Modern Metals: Included ' . $file);
+        } else {
+            error_log('Modern Metals: Widget file not found: ' . $file_path);
+        }
+    }
+    
+    // Register widgets directly
+    $widget_classes = [
+        'Modern_Metals_Hero_Widget',
+        'Modern_Metals_Introduction_Widget', 
+        'Modern_Metals_Gallery_Widget',
+        'Modern_Metals_Accordion_Widget',
+        'Modern_Metals_Team_Widget',
+        'Modern_Metals_Testimonials_Widget',
+        'Modern_Metals_Contact_Widget'
+    ];
+    
+    foreach ($widget_classes as $widget_class) {
+        try {
+            if (class_exists($widget_class)) {
+                $widget_instance = new $widget_class();
+                $widgets_manager->register_widget_type($widget_instance);
+                error_log('Modern Metals: Successfully registered ' . $widget_class);
+            } else {
+                error_log('Modern Metals: Class not found: ' . $widget_class);
+            }
+        } catch (Exception $e) {
+            error_log('Modern Metals: Error registering ' . $widget_class . ': ' . $e->getMessage());
+        }
+    }
+    
+    error_log('Modern Metals: Direct widget registration completed');
+}
+add_action('elementor/widgets/register', 'modern_metals_register_all_widgets');
+
+/**
+ * Register Modern Metals Widget Category
+ */
+function modern_metals_add_elementor_widget_categories($elements_manager) {
+    error_log('Modern Metals: Adding widget category');
+    $elements_manager->add_category(
+        'modern-metals',
+        [
+            'title' => esc_html__('Modern Metals', 'modern-metals'),
+            'icon' => 'fa fa-industry',
+        ]
+    );
+}
+add_action('elementor/elements/categories_registered', 'modern_metals_add_elementor_widget_categories');
+
+/**
+ * Update body class detection for Elementor pages with hero widgets
+ */
+function modern_metals_elementor_body_class($classes) {
+    if (defined('ELEMENTOR_VERSION') && is_page()) {
+        global $post;
+        
+        // Check if page has Modern Metals hero widget
+        $elementor_data = get_post_meta($post->ID, '_elementor_data', true);
+        if (!empty($elementor_data) && strpos($elementor_data, 'modern-metals-hero') !== false) {
+            $classes[] = 'has-hero-section';
+        }
+    }
+    
+    return $classes;
+}
+add_filter('body_class', 'modern_metals_elementor_body_class', 20);
 ?> 

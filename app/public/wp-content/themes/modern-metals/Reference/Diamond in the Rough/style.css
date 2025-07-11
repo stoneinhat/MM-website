@@ -1,10 +1,19 @@
-/*
-Theme Name: Modern Metals
-Description: Custom WordPress theme for Modern Metals Utah
-Version: 1.0
-Author: Modern Metals Team
-Text Domain: modern-metals
+/* 
+Theme Name: Hello Elementor Child
+Theme URI: https://github.com/elementor/hello-theme-child/
+Description: Hello Elementor Child is a child theme of Hello Elementor, created by Elementor team
+Author: Elementor Team
+Author URI: https://elementor.com/
+Template: hello-elementor
+Version: 2.0.0
+Text Domain: hello-elementor-child
+License: GNU General Public License v3 or later.
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, rtl-language-support, threaded-comments, translation-ready
 */
+
+/* Add your custom styles here */
+
 
 /* Reset and Base Styles */
 * {
@@ -39,7 +48,8 @@ body {
 }
 
 .header.scrolled {
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
     padding: 1rem 0;
 }
 
@@ -273,7 +283,6 @@ body {
 
 #portfolio-hero .hero-title {
     font-size: 3.5rem;
-    font-weight: 400;
     margin-bottom: 2.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -300,7 +309,10 @@ body {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-
+#portfolio-hero .scroll-indicator {
+    bottom: 1.5rem;
+    opacity: 0.8;
+}
 
 .hero-overlay {
     position: absolute;
@@ -318,7 +330,7 @@ body {
 }
 
 .hero-title {
-    font-family: 'Avenir', 'Avenir Next', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
     font-size: 4.5rem;
     font-weight: 400;
     color: #fff;
@@ -330,7 +342,7 @@ body {
 }
 
 .hero-subtitle {
-    font-family: 'Avenir', 'Avenir Next', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
     font-size: 1.1rem;
     font-weight: 300;
     color: #fff;
@@ -348,7 +360,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: #fff;
     padding: 1rem 2.5rem;
-    font-family: 'Avenir', 'Avenir Next', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
     font-size: 0.85rem;
     font-weight: 500;
     text-transform: uppercase;
@@ -365,7 +377,27 @@ body {
     box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1);
 }
 
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+}
 
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
 
 /* Introduction Section */
 .introduction {
@@ -454,7 +486,7 @@ body {
     width: 100%;
     height: 450px;
     object-fit: cover;
-    border-radius: 0;
+    border-radius: 8px;
 }
 
 /* Bottom Section: Steps + Services */
@@ -476,7 +508,7 @@ body {
 
 .step-item {
     padding: 0.2rem 0.5rem;
-    background: #465665;
+    background: #666666;
     border-radius: 0;
     font-family: 'DM Sans', 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
     font-size: 18pt;
@@ -493,7 +525,7 @@ body {
 }
 
 .step-item:hover {
-    background: #3a4c5a;
+    background: #444444;
     transform: translateY(-2px);
 }
 
@@ -518,7 +550,7 @@ body {
 }
 
 .service-column h3 {
-    font-family: 'DM Sans', 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
     font-size: 1.1rem;
     font-weight: 600;
     color: #333;
@@ -1630,7 +1662,7 @@ body {
 .team-review-content {
     display: grid;
     grid-template-columns: auto 1fr auto;
-    gap: 2rem;
+    gap: 5rem;
     align-items: center;
     margin-bottom: 3rem;
 }
@@ -1684,16 +1716,15 @@ body {
 
 .team-navigation {
     display: flex;
-    gap: 1rem;
+    gap: 15px;
     margin-top: 1rem;
 }
 
 .team-nav-btn {
-    background: transparent;
-    color: #fff;
-    border: none;
-    width: 30px;
-    height: 30px;
+    background: transparent !important;
+    color: #fff !important;
+    border: none !important;
+   
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1730,8 +1761,7 @@ body {
 }
 
 .team-photo-item img {
-    width: 136px;
-    height: 136px;
+
     object-fit: cover;
     filter: grayscale(100%);
     transition: all 0.3s ease;
@@ -1851,7 +1881,9 @@ body {
     flex-grow: 1;
 }
 
-
+.footer-spacer {
+    /* Empty spacer column */
+}
 
 
 
@@ -2821,7 +2853,7 @@ html {
     align-items: stretch;
     gap: 0;
     margin-top: 3rem;
-    height: 446px;
+    height: 600px;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
 }
@@ -2945,153 +2977,6 @@ html {
     background-repeat: no-repeat;
 }
 
-/* Meet The Team Page Styles */
-#meet-team-hero {
-    height: 50vh;
-    min-height: 400px;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-#meet-team-hero .hero-content {
-    text-align: center;
-    z-index: 2;
-    position: relative;
-    padding: 2rem;
-}
-
-#meet-team-hero .hero-title {
-    font-size: 3.5rem;
-    font-weight: 400;
-    margin-bottom: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-#meet-team-hero .hero-contact-btn {
-    background: rgba(255, 255, 255, 0.15);
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    color: #fff;
-    padding: 0.8rem 2rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(15px);
-    border-radius: 2px;
-}
-
-#meet-team-hero .hero-contact-btn:hover {
-    background: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.6);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-
-
-/* Team Member Sections */
-.team-member-section {
-    background: #EEEEE9;
-    padding: 60px 0;
-}
-
-.team-member-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 40px;
-}
-
-.team-member-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    align-items: center;
-}
-
-.team-member-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.team-member-name {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #333;
-    margin: 0 0 0.5rem 0;
-    line-height: 1.2;
-}
-
-.team-member-title {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #666;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: 0 0 1.5rem 0;
-}
-
-.team-member-description {
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    color: #555;
-    line-height: 1.6;
-    margin: 0;
-}
-
-.team-member-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.team-member-image img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 0;
-}
-
-/* Apply grayscale filter to specific team members */
-.team-member-section:nth-of-type(3) .team-member-image img, /* Gabriel */
-.team-member-section:nth-of-type(4) .team-member-image img, /* Dillon */
-.team-member-section:nth-of-type(5) .team-member-image img { /* Monika */
-    filter: grayscale(100%);
-}
-
-/* Keep Guillermo in color - no filter applied to nth-of-type(6) */
-
-/* Flip layout for Gabriel and Monika - Image left, Text right */
-.team-member-section:nth-of-type(3) .team-member-text, /* Gabriel */
-.team-member-section:nth-of-type(5) .team-member-text { /* Monika */
-    order: 2;
-}
-
-.team-member-section:nth-of-type(3) .team-member-image, /* Gabriel */
-.team-member-section:nth-of-type(5) .team-member-image { /* Monika */
-    order: 1;
-}
-
-/* White background for Gabriel and Monika sections */
-.team-member-section:nth-of-type(3), /* Gabriel */
-.team-member-section:nth-of-type(5) { /* Monika */
-    background: #FFFFFF;
-}
-
-/* Right-align text for Dillon and Guillermo sections */
-.team-member-section:nth-of-type(4) .team-member-text, /* Dillon */
-.team-member-section:nth-of-type(6) .team-member-text { /* Guillermo */
-    text-align: right;
-}
-
 #steel-works-hero .hero-content {
     text-align: center;
     z-index: 2;
@@ -3103,7 +2988,7 @@ html {
     font-size: 3.5rem;
     font-weight: 400;
     letter-spacing: 0.3em;
-    margin-bottom: 1.25rem;
+    margin-bottom: 2.5rem;
     text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -3142,51 +3027,47 @@ html {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-
-
-.steel-works-introduction {
-    background: #FFFFFF;
-    padding: 120px 0 80px 0;
+#steel-works-hero .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
 }
 
-.steel-works-introduction .container {
-    max-width: none;
-    padding: 0;
-    margin: 0;
+.steel-works-introduction {
+    background: #F8F8F8;
+    padding: 80px 0;
 }
 
 .steel-works-intro-top {
     display: flex;
     align-items: center;
     gap: 40px;
-    margin-bottom: 120px;
-    padding: 0 122px;
+    margin-bottom: 80px;
 }
 
 .intro-large-text {
-    flex: 1;
+    flex: 2;
     display: flex;
     align-items: center;
 }
 
 .intro-large-text h2 {
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 2.4rem;
+    font-size: 3rem;
     font-weight: 700;
     line-height: 1.2;
     color: #333;
     margin: 0;
-    text-align: left;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
 }
 
 .intro-divider {
-    width: 196px;
+    width: 100px;
     height: 2px;
     background-color: #333;
-    opacity: 0.6;
     flex-shrink: 0;
     align-self: center;
 }
@@ -3203,14 +3084,12 @@ html {
     line-height: 1.6;
     color: #666;
     margin: 0;
-    text-align: right;
 }
 
 .steel-works-intro-bottom {
     display: flex;
     align-items: stretch;
-    gap: 0px;
-    padding: 0 40px;
+    gap: 60px;
 }
 
 .intro-image-section {
@@ -3226,22 +3105,22 @@ html {
 
 .intro-image-overlay {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.8);
+    bottom: 30px;
+    left: 30px;
+    background: rgba(0, 0, 0, 0.45);
     color: white;
-    padding: 15px 18px;
+    padding: 25px 30px;
+    max-width: 280px;
     border: 2px solid #ffffff;
     backdrop-filter: blur(15px);
 }
 
 .intro-image-overlay h3 {
-    font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: 700;
     margin: 0 0 10px 0;
-    letter-spacing: 15px;
+    letter-spacing: 1px;
 }
 
 .intro-image-overlay p {
@@ -3251,25 +3130,17 @@ html {
     opacity: 0.9;
 }
 
-.intro-spacer {
-    width: 350px;
-    flex-shrink: 0;
-}
-
 .intro-content-section {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding-left: 20px;
-    text-align: right;
-    max-width: 450px;
-    margin-left: auto;
 }
 
 .intro-content-section h3 {
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 2.0rem;
+    font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.2;
     color: #333;
@@ -3278,7 +3149,7 @@ html {
 
 .intro-content-section p {
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 0.8rem;
+    font-size: 1rem;
     line-height: 1.8;
     color: #666;
     margin: 0 0 20px 0;
@@ -3298,7 +3169,7 @@ html {
     transition: all 0.3s ease;
     border-radius: 4px;
     margin-top: 20px;
-    align-self: flex-end;
+    align-self: flex-start;
 }
 
 .steel-works-contact-btn:hover {
@@ -3317,33 +3188,11 @@ html {
         min-height: 350px;
     }
     
-    #meet-team-hero .hero-title {
-        font-size: 3rem;
-    }
-    
-    #meet-team-hero {
-        height: 45vh;
-        min-height: 350px;
-    }
-    
-    .team-member-section {
-        padding: 50px 0;
-    }
-    
-    .team-member-content {
-        gap: 36px;
-    }
-    
-    .team-member-name {
-        font-size: 2.2rem;
-    }
-    
     .steel-works-intro-top {
         flex-direction: column;
         gap: 30px;
         margin-bottom: 60px;
         align-items: center;
-        padding: 0 30px;
     }
     
     .intro-divider {
@@ -3364,25 +3213,14 @@ html {
     .steel-works-intro-bottom {
         flex-direction: column;
         gap: 40px;
-        padding: 0 30px;
-    }
-    
-    .intro-spacer {
-        display: none;
     }
     
     .intro-content-section {
         padding-left: 0;
-        text-align: right;
-        max-width: 400px;
     }
     
     .intro-content-section h3 {
-        font-size: 2.0rem;
-    }
-    
-    .intro-content-section p {
-        font-size: 0.8rem;
+        font-size: 2rem;
     }
 }
 
@@ -3404,55 +3242,6 @@ html {
         letter-spacing: 0.1em;
     }
     
-    #meet-team-hero .hero-title {
-        font-size: 2.8rem;
-        letter-spacing: 0.25em;
-        margin-bottom: 1.2rem;
-    }
-    
-    #meet-team-hero {
-        height: 40vh;
-        min-height: 300px;
-    }
-    
-    #meet-team-hero .hero-contact-btn {
-        padding: 0.7rem 1.8rem;
-        font-size: 0.8rem;
-        letter-spacing: 0.1em;
-    }
-    
-    .team-member-section {
-        padding: 40px 0;
-    }
-    
-    .team-member-container {
-        padding: 0 30px;
-    }
-    
-    .team-member-content {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        text-align: center;
-    }
-    
-    .team-member-name {
-        font-size: 2rem;
-    }
-    
-    .team-member-title {
-        font-size: 0.9rem;
-    }
-    
-    .team-member-description {
-        font-size: 0.95rem;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-    
-    .team-member-image img {
-        max-width: 300px;
-    }
-    
     .steel-works-introduction {
         padding: 60px 0;
     }
@@ -3460,7 +3249,6 @@ html {
     .steel-works-intro-top {
         margin-bottom: 40px;
         gap: 20px;
-        padding: 0 20px;
     }
     
     .intro-divider {
@@ -3472,29 +3260,18 @@ html {
     }
     
     .intro-content-section h3 {
-        font-size: 1.75rem;
-    }
-    
-    .intro-content-section p {
-        font-size: 0.7rem;
-    }
-    
-    .steel-works-intro-bottom {
-        padding: 0 20px;
+        font-size: 1.8rem;
     }
     
     .intro-image-overlay {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 12px;
+        bottom: 20px;
+        left: 20px;
+        padding: 20px;
+        max-width: 250px;
     }
     
     .intro-image-overlay h3 {
-        font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
         font-size: 1.3rem;
-        font-weight: 300;
-        letter-spacing: 15px;
     }
 }
 
@@ -3523,66 +3300,12 @@ html {
         letter-spacing: 0.08em;
     }
     
-    #meet-team-hero .hero-title {
-        font-size: 2.2rem;
-        letter-spacing: 0.2em;
-        margin-bottom: 1rem;
-    }
-    
-    #meet-team-hero {
-        height: 35vh;
-        min-height: 280px;
-    }
-    
-    #meet-team-hero .hero-subtitle {
-        font-size: 0.95rem;
-        letter-spacing: 0.06em;
-        margin-bottom: 2rem;
-        padding: 0 1rem;
-    }
-    
-    #meet-team-hero .hero-contact-btn {
-        padding: 0.6rem 1.5rem;
-        font-size: 0.75rem;
-        letter-spacing: 0.08em;
-    }
-    
-    .team-member-section {
-        padding: 30px 0;
-    }
-    
-    .team-member-container {
-        padding: 0 20px;
-    }
-    
-    .team-member-content {
-        gap: 18px;
-    }
-    
-    .team-member-name {
-        font-size: 1.8rem;
-    }
-    
-    .team-member-title {
-        font-size: 0.85rem;
-        letter-spacing: 1.5px;
-    }
-    
-    .team-member-description {
-        font-size: 0.9rem;
-    }
-    
-    .team-member-image img {
-        max-width: 280px;
-    }
-    
     .steel-works-introduction {
         padding: 40px 0;
     }
     
     .steel-works-intro-top {
         gap: 15px;
-        padding: 0 15px;
     }
     
     .intro-divider {
@@ -3597,30 +3320,15 @@ html {
         font-size: 1.5rem;
     }
     
-    .intro-content-section p {
-        font-size: 0.6rem;
-    }
-    
-    .intro-content-section {
-        max-width: 320px;
-    }
-    
-    .steel-works-intro-bottom {
-        padding: 0 15px;
-    }
-    
     .intro-image-overlay {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 9px;
+        bottom: 15px;
+        left: 15px;
+        padding: 15px;
+        max-width: 200px;
     }
     
     .intro-image-overlay h3 {
-        font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
         font-size: 1.1rem;
-        font-weight: 300;
-        letter-spacing: 10px;
     }
     
     .intro-image-overlay p {
@@ -3632,220 +3340,3 @@ html {
         text-align: center;
     }
 } 
-
-/* Full-Width Layout Utilities */
-.full-width-section {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    max-width: none !important;
-}
-
-.full-width-no-padding {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-}
-
-.edge-to-edge {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    max-width: none !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-}
-
-/* Gallery showcase layout options */
-.gallery-showcase.full-width-section {
-    position: relative;
-}
-
-.gallery-showcase.full-width-section .gallery-container {
-    max-width: none;
-    padding-left: 20px;
-    padding-right: clamp(250px, 25vw, 400px);
-}
-
-.gallery-showcase.no-max-width .gallery-container {
-    max-width: none;
-}
-
-/* Full-width gallery sidebar positioning */
-.gallery-showcase.full-width-section .gallery-sidebar {
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: clamp(250px, 25vw, 400px);
-    z-index: 10;
-}
-
-/* Widget-specific full-width overrides */
-.elementor-widget-team_section.full-width .team {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-}
-
-.elementor-widget-team_section.full-width .team .container {
-    max-width: none;
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
-.elementor-widget-introduction_section.full-width .introduction {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-}
-
-.elementor-widget-introduction_section.full-width .introduction .container {
-    max-width: none;
-    padding-left: clamp(20px, 5vw, 80px);
-    padding-right: clamp(20px, 5vw, 80px);
-}
-
-/* Responsive adjustments for full-width gallery */
-@media (max-width: 768px) {
-    .gallery-showcase.full-width-section .gallery-sidebar {
-        position: relative;
-        width: 100%;
-        margin-top: 2rem;
-    }
-    
-    .gallery-showcase.full-width-section .gallery-container {
-        padding-right: 20px;
-    }
-}
-
-/* Container override utility */
-.no-max-width {
-    max-width: none !important;
-}
-
-.no-container-padding {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-}
-
-/* Elementor section overrides */
-.elementor-section.full-width-section {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-}
-
-.elementor-section.full-width-section .elementor-container {
-    max-width: none !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-}
-
-/* Flexible padding options */
-.minimal-padding {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-}
-
-.medium-padding {
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
-}
-
-.large-padding {
-    padding-left: 4rem !important;
-    padding-right: 4rem !important;
-}
-
-/* Elementor Compatibility Styles */
-.elementor-page-content,
-.elementor-homepage-content,
-.elementor-content {
-    width: 100%;
-    max-width: 100%;
-}
-
-/* Ensure Elementor content doesn't interfere with header */
-.elementor-page-content .elementor-section:first-child,
-.elementor-homepage-content .elementor-section:first-child,
-.elementor-content .elementor-section:first-child {
-    margin-top: 0;
-}
-
-/* Basic Elementor section styling */
-.elementor-section {
-    position: relative;
-}
-
-/* Fix for Elementor full-width sections */
-.elementor-section.elementor-section-full_width {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-}
-
-/* Ensure proper spacing for Elementor content */
-.page-content .elementor-inner {
-    max-width: 100%;
-}
-
-/* Responsive Elementor support */
-@media (max-width: 768px) {
-    .elementor-page-content,
-    .elementor-homepage-content,
-    .elementor-content {
-        padding: 0;
-    }
-}
-
-/* Smart Header Context Behavior */
-/* Transparent header on pages with hero sections */
-.page-template-front-page .header,
-.home .header,
-body.has-hero-section .header {
-    background: transparent;
-}
-
-/* Solid header on regular pages without hero - BUT maintain transparency for front page */
-.page-template-default .header,
-body:not(.home):not(.page-template-front-page):not(.has-hero-section) .header {
-    background: var(--header-bg-color, rgba(255,255,255,0.98));
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-/* Ensure Elementor content starts below fixed header - ONLY for non-hero pages */
-body:not(.home):not(.page-template-front-page):not(.has-hero-section) .elementor-page-content,
-body:not(.home):not(.page-template-front-page):not(.has-hero-section) .elementor-content {
-    padding-top: 100px; /* Adjust based on your header height */
-}
-
-/* Always maintain zero padding for hero section pages */
-body.has-hero-section .elementor-content,
-body.has-hero-section .elementor-page-content,
-.home .elementor-content,
-.home .elementor-page-content,
-.page-template-front-page .elementor-content,
-.page-template-front-page .elementor-page-content {
-    padding-top: 0 !important;
-}
-
-/* Ensure text is readable on solid header background - BUT keep white text for transparent headers */
-.page-template-default .header .nav-menu a,
-body:not(.home):not(.page-template-front-page):not(.has-hero-section) .header .nav-menu a {
-    color: #333 !important;
-}
-
-.page-template-default .header.scrolled .nav-menu a,
-body:not(.home):not(.page-template-front-page):not(.has-hero-section) .header.scrolled .nav-menu a {
-    color: #333 !important;
-}
-
-/* Ensure white text remains on transparent headers for hero pages */
-.page-template-front-page .header .nav-menu a,
-.home .header .nav-menu a,
-body.has-hero-section .header .nav-menu a {
-    color: #fff !important;
-}

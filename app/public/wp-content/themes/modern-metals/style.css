@@ -34,14 +34,13 @@ body {
     width: 100%;
     background: transparent;
     z-index: 1000;
-    padding: 1.5rem 0;
+    padding: 0.75rem 0;
     transition: all 0.3s ease;
 }
 
 .header.scrolled {
-    background: rgba(255, 255, 255, 0.98) !important;
-    padding: 1rem 0;
-    backdrop-filter: blur(10px);
+    background: #ffffff !important;
+    padding: 0.5rem 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
@@ -1853,9 +1852,6 @@ body {
     flex-grow: 1;
 }
 
-.footer-spacer {
-    /* Empty spacer column */
-}
 
 
 
@@ -3806,27 +3802,29 @@ html {
 }
 
 /* Smart Header Context Behavior */
-/* Transparent header on pages with hero sections */
-.page-template-front-page .header,
-.home .header,
-body.has-hero-section .header {
-    background: transparent;
+/* DEFAULT: Transparent header for hero pages */
+.header {
+    background: transparent !important;
 }
 
-/* CRITICAL: Ensure scrolled state always overrides transparent background */
-.page-template-front-page .header.scrolled,
-.home .header.scrolled,
-body.has-hero-section .header.scrolled {
-    background: rgba(255, 255, 255, 0.98) !important;
-    backdrop-filter: blur(10px) !important;
+/* TRANSPARENT: Specific hero page classes */
+.page-template-front-page .header,
+.home .header,
+body.has-hero-section .header,
+body.elementor-page .header {
+    background: transparent !important;
+}
+
+/* SCROLLED: Solid white background when scrolled (ALL pages) */
+.header.scrolled {
+    background: #ffffff !important;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
 }
 
-/* Solid header on regular pages without hero - BUT maintain transparency for front page */
-.page-template-default .header,
-body:not(.home):not(.page-template-front-page):not(.has-hero-section) .header {
-    background: var(--header-bg-color, rgba(255,255,255,0.98));
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+/* SOLID: Only for specific non-hero pages */
+body:not(.home):not(.page-template-front-page):not(.has-hero-section):not(.elementor-page) .header:not(.scrolled) {
+    background: #ffffff !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
 }
 
 /* Ensure Elementor content starts below fixed header - ONLY for non-hero pages */
@@ -3845,20 +3843,18 @@ body.has-hero-section .elementor-page-content,
     padding-top: 0 !important;
 }
 
-/* Ensure text is readable on solid header background - BUT keep white text for transparent headers */
-.page-template-default .header .nav-menu a,
-body:not(.home):not(.page-template-front-page):not(.has-hero-section) .header .nav-menu a {
-    color: #333 !important;
-}
-
-.page-template-default .header.scrolled .nav-menu a,
-body:not(.home):not(.page-template-front-page):not(.has-hero-section) .header.scrolled .nav-menu a {
-    color: #333 !important;
-}
-
-/* Ensure white text remains on transparent headers for hero pages */
-.page-template-front-page .header .nav-menu a,
-.home .header .nav-menu a,
-body.has-hero-section .header .nav-menu a {
+/* Text colors for transparent vs solid headers */
+/* WHITE text for transparent headers (default) */
+.header .nav-menu a {
     color: #fff !important;
+}
+
+/* DARK text when scrolled (white background) */
+.header.scrolled .nav-menu a {
+    color: #333 !important;
+}
+
+/* DARK text for non-hero pages with solid headers */
+body:not(.home):not(.page-template-front-page):not(.has-hero-section):not(.elementor-page) .header:not(.scrolled) .nav-menu a {
+    color: #333 !important;
 }
