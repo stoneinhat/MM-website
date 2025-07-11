@@ -1,3 +1,11 @@
+/*
+Theme Name: Modern Metals
+Description: Custom WordPress theme for Modern Metals Utah
+Version: 1.0
+Author: Modern Metals Team
+Text Domain: modern-metals
+*/
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -31,8 +39,7 @@ body {
 }
 
 .header.scrolled {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.98);
     padding: 1rem 0;
 }
 
@@ -266,6 +273,7 @@ body {
 
 #portfolio-hero .hero-title {
     font-size: 3.5rem;
+    font-weight: 400;
     margin-bottom: 2.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -292,10 +300,7 @@ body {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-#portfolio-hero .scroll-indicator {
-    bottom: 1.5rem;
-    opacity: 0.8;
-}
+
 
 .hero-overlay {
     position: absolute;
@@ -313,7 +318,7 @@ body {
 }
 
 .hero-title {
-    font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Avenir', 'Avenir Next', 'Inter', 'Helvetica Neue', Arial, sans-serif;
     font-size: 4.5rem;
     font-weight: 400;
     color: #fff;
@@ -325,7 +330,7 @@ body {
 }
 
 .hero-subtitle {
-    font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Avenir', 'Avenir Next', 'Inter', 'Helvetica Neue', Arial, sans-serif;
     font-size: 1.1rem;
     font-weight: 300;
     color: #fff;
@@ -343,7 +348,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: #fff;
     padding: 1rem 2.5rem;
-    font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Avenir', 'Avenir Next', 'Inter', 'Helvetica Neue', Arial, sans-serif;
     font-size: 0.85rem;
     font-weight: 500;
     text-transform: uppercase;
@@ -360,27 +365,7 @@ body {
     box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1);
 }
 
-.scroll-indicator {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #fff;
-    font-size: 1.5rem;
-    animation: bounce 2s infinite;
-}
 
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateX(-50%) translateY(0);
-    }
-    40% {
-        transform: translateX(-50%) translateY(-10px);
-    }
-    60% {
-        transform: translateX(-50%) translateY(-5px);
-    }
-}
 
 /* Introduction Section */
 .introduction {
@@ -469,7 +454,7 @@ body {
     width: 100%;
     height: 450px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 0;
 }
 
 /* Bottom Section: Steps + Services */
@@ -491,7 +476,7 @@ body {
 
 .step-item {
     padding: 0.2rem 0.5rem;
-    background: #666666;
+    background: #465665;
     border-radius: 0;
     font-family: 'DM Sans', 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
     font-size: 18pt;
@@ -508,7 +493,7 @@ body {
 }
 
 .step-item:hover {
-    background: #444444;
+    background: #3a4c5a;
     transform: translateY(-2px);
 }
 
@@ -533,7 +518,7 @@ body {
 }
 
 .service-column h3 {
-    font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'DM Sans', 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
     font-size: 1.1rem;
     font-weight: 600;
     color: #333;
@@ -2981,6 +2966,7 @@ html {
 
 #meet-team-hero .hero-title {
     font-size: 3.5rem;
+    font-weight: 400;
     margin-bottom: 2.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -3007,10 +2993,7 @@ html {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-#meet-team-hero .scroll-indicator {
-    bottom: 1.5rem;
-    opacity: 0.8;
-}
+
 
 /* Team Member Sections */
 .team-member-section {
@@ -3161,15 +3144,7 @@ html {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-#steel-works-hero .scroll-indicator {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #fff;
-    font-size: 1.5rem;
-    animation: bounce 2s infinite;
-}
+
 
 .steel-works-introduction {
     background: #FFFFFF;
@@ -3659,3 +3634,211 @@ html {
         text-align: center;
     }
 } 
+
+/* Full-Width Layout Utilities */
+.full-width-section {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    max-width: none !important;
+}
+
+.full-width-no-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.edge-to-edge {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    max-width: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Gallery showcase layout options */
+.gallery-showcase.full-width-section {
+    position: relative;
+}
+
+.gallery-showcase.full-width-section .gallery-container {
+    max-width: none;
+    padding-left: 20px;
+    padding-right: clamp(250px, 25vw, 400px);
+}
+
+.gallery-showcase.no-max-width .gallery-container {
+    max-width: none;
+}
+
+/* Full-width gallery sidebar positioning */
+.gallery-showcase.full-width-section .gallery-sidebar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: clamp(250px, 25vw, 400px);
+    z-index: 10;
+}
+
+/* Widget-specific full-width overrides */
+.elementor-widget-team_section.full-width .team {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+}
+
+.elementor-widget-team_section.full-width .team .container {
+    max-width: none;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.elementor-widget-introduction_section.full-width .introduction {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+}
+
+.elementor-widget-introduction_section.full-width .introduction .container {
+    max-width: none;
+    padding-left: clamp(20px, 5vw, 80px);
+    padding-right: clamp(20px, 5vw, 80px);
+}
+
+/* Responsive adjustments for full-width gallery */
+@media (max-width: 768px) {
+    .gallery-showcase.full-width-section .gallery-sidebar {
+        position: relative;
+        width: 100%;
+        margin-top: 2rem;
+    }
+    
+    .gallery-showcase.full-width-section .gallery-container {
+        padding-right: 20px;
+    }
+}
+
+/* Container override utility */
+.no-max-width {
+    max-width: none !important;
+}
+
+.no-container-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Elementor section overrides */
+.elementor-section.full-width-section {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+}
+
+.elementor-section.full-width-section .elementor-container {
+    max-width: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Flexible padding options */
+.minimal-padding {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+.medium-padding {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+.large-padding {
+    padding-left: 4rem !important;
+    padding-right: 4rem !important;
+}
+
+/* Elementor Compatibility Styles */
+.elementor-page-content,
+.elementor-homepage-content,
+.elementor-content {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Ensure Elementor content doesn't interfere with header */
+.elementor-page-content .elementor-section:first-child,
+.elementor-homepage-content .elementor-section:first-child,
+.elementor-content .elementor-section:first-child {
+    margin-top: 0;
+}
+
+/* Basic Elementor section styling */
+.elementor-section {
+    position: relative;
+}
+
+/* Fix for Elementor full-width sections */
+.elementor-section.elementor-section-full_width {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+/* Ensure proper spacing for Elementor content */
+.page-content .elementor-inner {
+    max-width: 100%;
+}
+
+/* Responsive Elementor support */
+@media (max-width: 768px) {
+    .elementor-page-content,
+    .elementor-homepage-content,
+    .elementor-content {
+        padding: 0;
+    }
+}
+
+/* Smart Header Context Behavior */
+/* Transparent header on pages with hero sections */
+.page-template-front-page .header,
+.home .header,
+body.has-hero-section .header {
+    background: transparent;
+}
+
+/* Solid header on regular pages without hero */
+.elementor-page-content .header,
+.page-template-default .header,
+body:not(.home):not(.page-template-front-page):not(.has-hero-section) .header {
+    background: var(--header-bg-color, rgba(255,255,255,0.98));
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Ensure Elementor content starts below fixed header */
+.elementor-page-content,
+.elementor-content {
+    padding-top: 100px; /* Adjust based on your header height */
+}
+
+/* Exception: Don't add padding if page has hero section */
+body.has-hero-section .elementor-content,
+body.has-hero-section .elementor-page-content {
+    padding-top: 0;
+}
+
+/* Ensure text is readable on solid header background */
+.elementor-page-content .header .nav-menu a,
+.page-template-default .header .nav-menu a,
+body:not(.home):not(.page-template-front-page) .header .nav-menu a {
+    color: #333 !important;
+}
+
+.elementor-page-content .header.scrolled .nav-menu a,
+.page-template-default .header.scrolled .nav-menu a {
+    color: #333 !important;
+}
