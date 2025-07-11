@@ -129,7 +129,7 @@ class Modern_Metals_Hero_Widget extends Modern_Metals_Base_Widget {
                 'label_on' => esc_html__('Show', 'modern-metals'),
                 'label_off' => esc_html__('Hide', 'modern-metals'),
                 'return_value' => 'yes',
-                'default' => 'yes',
+                'default' => '',
             ]
         );
 
@@ -143,6 +143,8 @@ class Modern_Metals_Hero_Widget extends Modern_Metals_Base_Widget {
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
+
+        $this->add_full_width_control();
 
         $this->add_group_control(
             \Elementor\Group_Control_Background::get_type(),
@@ -269,9 +271,9 @@ class Modern_Metals_Hero_Widget extends Modern_Metals_Base_Widget {
         $this->add_responsive_control(
             'hero_height',
             [
-                'label' => esc_html__('Hero Height', 'modern-metals'),
+                'label' => esc_html__('Custom Hero Height', 'modern-metals'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
-                'size_units' => ['px', 'vh'],
+                'size_units' => ['px', 'vh', '%'],
                 'range' => [
                     'px' => [
                         'min' => 300,
@@ -283,14 +285,101 @@ class Modern_Metals_Hero_Widget extends Modern_Metals_Base_Widget {
                         'max' => 100,
                         'step' => 1,
                     ],
+                    '%' => [
+                        'min' => 50,
+                        'max' => 100,
+                        'step' => 5,
+                    ],
                 ],
                 'default' => [
                     'unit' => 'vh',
-                    'size' => 100,
+                    'size' => 70,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .hero' => 'height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}}.hero-type-custom .hero' => 'height: {{SIZE}}{{UNIT}}; min-height: {{SIZE}}{{UNIT}};',
                 ],
+                'condition' => [
+                    'hero_type' => 'custom',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'hero_width_mode',
+            [
+                'label' => esc_html__('Width Mode', 'modern-metals'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'default' => 'full',
+                'options' => [
+                    'contained' => esc_html__('Contained', 'modern-metals'),
+                    'full' => esc_html__('Full Width', 'modern-metals'),
+                    'full-stretched' => esc_html__('Full Width + Stretched', 'modern-metals'),
+                ],
+                'prefix_class' => 'hero-width-',
+            ]
+        );
+
+        $this->add_control(
+            'hero_height_mode',
+            [
+                'label' => esc_html__('Height Mode', 'modern-metals'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'default' => 'normal',
+                'options' => [
+                    'normal' => esc_html__('Normal', 'modern-metals'),
+                    'stretch-top' => esc_html__('Stretch to Top', 'modern-metals'),
+                    'full-stretch' => esc_html__('Full Screen Stretch', 'modern-metals'),
+                ],
+                'prefix_class' => 'hero-height-',
+                'description' => esc_html__('Stretch to Top extends the hero upward to cover header space', 'modern-metals'),
+            ]
+        );
+
+        $this->add_control(
+            'hero_type',
+            [
+                'label' => esc_html__('Hero Type', 'modern-metals'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'default' => 'full',
+                'options' => [
+                    'full' => esc_html__('Full Hero (100vh)', 'modern-metals'),
+                    'slim' => esc_html__('Slim Hero (50vh)', 'modern-metals'),
+                    'custom' => esc_html__('Custom Height', 'modern-metals'),
+                ],
+                'prefix_class' => 'hero-type-',
+            ]
+        );
+
+        $this->add_responsive_control(
+            'top_offset',
+            [
+                'label' => esc_html__('Top Offset', 'modern-metals'),
+                'type' => \Elementor\Controls_Manager::SLIDER,
+                'size_units' => ['px', 'vh'],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 150,
+                        'step' => 5,
+                    ],
+                    'vh' => [
+                        'min' => 0,
+                        'max' => 20,
+                        'step' => 1,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 80,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}}.hero-height-stretch-top .hero' => 'margin-top: -{{SIZE}}{{UNIT}}; padding-top: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}}.hero-height-full-stretch .hero' => 'margin-top: -{{SIZE}}{{UNIT}}; padding-top: {{SIZE}}{{UNIT}};',
+                ],
+                'condition' => [
+                    'hero_height_mode' => ['stretch-top', 'full-stretch'],
+                ],
+                'description' => esc_html__('Adjust how far the hero extends upward (usually header height)', 'modern-metals'),
             ]
         );
 
@@ -346,6 +435,65 @@ class Modern_Metals_Hero_Widget extends Modern_Metals_Base_Widget {
             ]
         );
 
+        $this->add_responsive_control(
+            'content_horizontal_position',
+            [
+                'label' => esc_html__('Horizontal Position', 'modern-metals'),
+                'type' => \Elementor\Controls_Manager::CHOOSE,
+                'options' => [
+                    'flex-start' => [
+                        'title' => esc_html__('Left', 'modern-metals'),
+                        'icon' => 'eicon-h-align-left',
+                    ],
+                    'center' => [
+                        'title' => esc_html__('Center', 'modern-metals'),
+                        'icon' => 'eicon-h-align-center',
+                    ],
+                    'flex-end' => [
+                        'title' => esc_html__('Right', 'modern-metals'),
+                        'icon' => 'eicon-h-align-right',
+                    ],
+                ],
+                'default' => 'center',
+                'selectors' => [
+                    '{{WRAPPER}} .hero' => 'justify-content: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'content_max_width',
+            [
+                'label' => esc_html__('Content Max Width', 'modern-metals'),
+                'type' => \Elementor\Controls_Manager::SLIDER,
+                'size_units' => ['px', '%', 'vw'],
+                'range' => [
+                    'px' => [
+                        'min' => 300,
+                        'max' => 1200,
+                        'step' => 10,
+                    ],
+                    '%' => [
+                        'min' => 20,
+                        'max' => 100,
+                        'step' => 5,
+                    ],
+                    'vw' => [
+                        'min' => 20,
+                        'max' => 100,
+                        'step' => 5,
+                    ],
+                ],
+                'default' => [
+                    'unit' => '%',
+                    'size' => 80,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .hero-content' => 'max-width: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
         $this->end_controls_section();
 
         // Common controls
@@ -358,32 +506,41 @@ class Modern_Metals_Hero_Widget extends Modern_Metals_Base_Widget {
     protected function render_widget($settings) {
         // Build button attributes
         $button_attributes = $this->get_button_attributes($settings);
-        ?>
         
-        <section id="home" class="hero hero-section">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <?php if (!empty($settings['hero_title'])) : ?>
-                    <h1 class="hero-title"><?php $this->echo_html($settings['hero_title']); ?></h1>
-                <?php endif; ?>
-                
-                <?php if (!empty($settings['hero_subtitle'])) : ?>
-                    <p class="hero-subtitle"><?php $this->echo_html($settings['hero_subtitle']); ?></p>
-                <?php endif; ?>
-                
-                <?php if (!empty($settings['hero_button_text'])) : ?>
-                    <button class="hero-contact-btn" <?php echo $button_attributes; ?>>
-                        <?php $this->echo_html($settings['hero_button_text']); ?>
-                    </button>
-                <?php endif; ?>
-            </div>
-            
-            <?php if ($settings['show_scroll_indicator'] === 'yes') : ?>
-                <div class="scroll-indicator">
-                    <i class="fas fa-chevron-down"></i>
+        // Get full width class and additional classes
+        $full_width_class = $this->get_full_width_class($settings);
+        $container_classes = ['hero-widget-container'];
+        if ($full_width_class) {
+            $container_classes[] = $full_width_class;
+        }
+        
+        ?>
+        <div class="<?php echo esc_attr(implode(' ', $container_classes)); ?>">
+            <section id="home" class="hero hero-section">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <?php if (!empty($settings['hero_title'])) : ?>
+                        <h1 class="hero-title"><?php $this->echo_html($settings['hero_title']); ?></h1>
+                    <?php endif; ?>
+                    
+                    <?php if (!empty($settings['hero_subtitle'])) : ?>
+                        <p class="hero-subtitle"><?php $this->echo_html($settings['hero_subtitle']); ?></p>
+                    <?php endif; ?>
+                    
+                    <?php if (!empty($settings['hero_button_text'])) : ?>
+                        <button class="hero-contact-btn" <?php echo $button_attributes; ?>>
+                            <?php $this->echo_html($settings['hero_button_text']); ?>
+                        </button>
+                    <?php endif; ?>
                 </div>
-            <?php endif; ?>
-        </section>
+                
+                <?php if ($settings['show_scroll_indicator'] === 'yes') : ?>
+                    <div class="scroll-indicator">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                <?php endif; ?>
+            </section>
+        </div>
         
         <?php
     }
@@ -436,32 +593,54 @@ class Modern_Metals_Hero_Widget extends Modern_Metals_Base_Widget {
         } else if (settings.hero_button_action === 'scroll' && settings.scroll_target) {
             buttonAction = 'onclick="document.querySelector(\'' + settings.scroll_target + '\').scrollIntoView({behavior: \'smooth\'})"';
         }
+        
+        var containerClasses = ['hero-widget-container'];
+        if (settings.full_width === 'yes') {
+            containerClasses.push('full-width-section');
+        }
+        
+        // Add hero width mode class
+        if (settings.hero_width_mode) {
+            containerClasses.push('hero-width-' + settings.hero_width_mode);
+        }
+        
+        // Add hero height mode class
+        if (settings.hero_height_mode) {
+            containerClasses.push('hero-height-' + settings.hero_height_mode);
+        }
+        
+        // Add hero type class
+        if (settings.hero_type) {
+            containerClasses.push('hero-type-' + settings.hero_type);
+        }
         #>
         
-        <section id="home" class="hero hero-section">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <# if (settings.hero_title) { #>
-                    <h1 class="hero-title">{{{ settings.hero_title }}}</h1>
-                <# } #>
-                
-                <# if (settings.hero_subtitle) { #>
-                    <p class="hero-subtitle">{{{ settings.hero_subtitle }}}</p>
-                <# } #>
-                
-                <# if (settings.hero_button_text) { #>
-                    <button class="hero-contact-btn" {{{ buttonAction }}}>
-                        {{{ settings.hero_button_text }}}
-                    </button>
-                <# } #>
-            </div>
-            
-            <# if (settings.show_scroll_indicator === 'yes') { #>
-                <div class="scroll-indicator">
-                    <i class="fas fa-chevron-down"></i>
+        <div class="{{ containerClasses.join(' ') }}">
+            <section id="home" class="hero hero-section">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <# if (settings.hero_title) { #>
+                        <h1 class="hero-title">{{{ settings.hero_title }}}</h1>
+                    <# } #>
+                    
+                    <# if (settings.hero_subtitle) { #>
+                        <p class="hero-subtitle">{{{ settings.hero_subtitle }}}</p>
+                    <# } #>
+                    
+                    <# if (settings.hero_button_text) { #>
+                        <button class="hero-contact-btn" {{{ buttonAction }}}>
+                            {{{ settings.hero_button_text }}}
+                        </button>
+                    <# } #>
                 </div>
-            <# } #>
-        </section>
+                
+                <# if (settings.show_scroll_indicator === 'yes') { #>
+                    <div class="scroll-indicator">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                <# } #>
+            </section>
+        </div>
         <?php
     }
 } 

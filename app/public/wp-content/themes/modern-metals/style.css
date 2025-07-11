@@ -41,7 +41,7 @@ body {
 .header.scrolled {
     background: #ffffff !important;
     padding: 0.5rem 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05) !important;
 }
 
 .header.scrolled .nav-menu a,
@@ -316,6 +316,134 @@ body {
     text-align: center;
     z-index: 2;
     position: relative;
+}
+
+/* Hero Widget Container Styles */
+.hero-widget-container {
+    width: 100%;
+    position: relative;
+}
+
+.hero-widget-container.full-width-section {
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    width: 100vw;
+    max-width: none;
+}
+
+/* Hero Width Mode Classes */
+.hero-width-contained .hero {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-width-full .hero {
+    width: 100%;
+}
+
+.hero-width-full-stretched .hero {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+}
+
+/* Hero Type Classes */
+.hero-type-full .hero {
+    height: 100vh;
+    min-height: 100vh;
+}
+
+.hero-type-slim .hero {
+    height: 50vh;
+    min-height: 50vh;
+}
+
+/* Hero Height Mode Classes - Stretch to Top */
+.hero-height-stretch-top .hero {
+    position: relative;
+}
+
+.hero-height-full-stretch .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 100vh;
+}
+
+/* Combined classes for better control */
+.hero-type-full.hero-height-stretch-top .hero {
+    height: calc(100vh + 80px);
+    min-height: calc(100vh + 80px);
+}
+
+.hero-type-slim.hero-height-stretch-top .hero {
+    height: calc(50vh + 80px);
+    min-height: calc(50vh + 80px);
+}
+
+/* Enhanced Hero Layout */
+.hero {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Scroll Indicator Styles (Hidden by default) */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 3;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-indicator:hover {
+    opacity: 1;
+}
+
+/* Responsive adjustments for hero widget */
+@media (max-width: 768px) {
+    .hero-width-full-stretched .hero {
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+    }
+    
+    .hero-content {
+        max-width: 90%;
+        padding: 0 1rem;
+    }
+    
+    .scroll-indicator {
+        bottom: 20px;
+        font-size: 1.2rem;
+    }
+    
+    /* Adjust top stretch for mobile headers */
+    .hero-type-full.hero-height-stretch-top .hero {
+        height: calc(100vh + 60px);
+        min-height: calc(100vh + 60px);
+    }
+    
+    .hero-type-slim.hero-height-stretch-top .hero {
+        height: calc(50vh + 60px);
+        min-height: calc(50vh + 60px);
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjust for smaller mobile headers */
+    .hero-type-full.hero-height-stretch-top .hero {
+        height: calc(100vh + 50px);
+        min-height: calc(100vh + 50px);
+    }
+    
+    .hero-type-slim.hero-height-stretch-top .hero {
+        height: calc(50vh + 50px);
+        min-height: calc(50vh + 50px);
+    }
 }
 
 .hero-title {
@@ -3641,6 +3769,36 @@ html {
     max-width: none !important;
 }
 
+.full-height-section {
+    min-height: 100vh;
+}
+
+/* Width Mode Classes */
+.width-mode-contained {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.width-mode-full-width {
+    width: 100%;
+}
+
+.width-mode-edge-to-edge {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+}
+
+/* Combined Full Width and Height */
+.full-width-section.full-height-section {
+    width: 100vw;
+    min-height: 100vh;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    max-width: none !important;
+}
+
 .full-width-no-padding {
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -3807,6 +3965,16 @@ html {
     background: transparent !important;
 }
 
+/* FORCE: Solid white background when scrolled - highest priority */
+.header.scrolled,
+.page-template-front-page .header.scrolled,
+.home .header.scrolled,
+body.has-hero-section .header.scrolled,
+body.elementor-page .header.scrolled {
+    background: #ffffff !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05) !important;
+}
+
 /* TRANSPARENT: Specific hero page classes */
 .page-template-front-page .header,
 .home .header,
@@ -3818,7 +3986,7 @@ body.elementor-page .header {
 /* SCROLLED: Solid white background when scrolled (ALL pages) */
 .header.scrolled {
     background: #ffffff !important;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05) !important;
 }
 
 /* SOLID: Only for specific non-hero pages */

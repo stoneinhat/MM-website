@@ -34,7 +34,7 @@ dropdowns.forEach(dropdown => {
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
     if (header) {
-        if (window.scrollY > 100) {
+        if (window.scrollY > 20) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.header');
     if (header) {
         // Check initial scroll position
-        if (window.scrollY > 100) {
+        if (window.scrollY > 20) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');

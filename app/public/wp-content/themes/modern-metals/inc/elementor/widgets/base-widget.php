@@ -151,13 +151,54 @@ abstract class Modern_Metals_Base_Widget extends \Elementor\Widget_Base {
                 'description' => esc_html__('Make the section stretch to full browser width', 'modern-metals'),
             ]
         );
+
+        $this->add_control(
+            'full_height',
+            [
+                'label' => esc_html__('Full Height', 'modern-metals'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label_on' => esc_html__('Yes', 'modern-metals'),
+                'label_off' => esc_html__('No', 'modern-metals'),
+                'return_value' => 'yes',
+                'default' => '',
+                'description' => esc_html__('Make the section stretch to full viewport height', 'modern-metals'),
+            ]
+        );
+
+        $this->add_control(
+            'width_mode',
+            [
+                'label' => esc_html__('Width Mode', 'modern-metals'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'default' => 'contained',
+                'options' => [
+                    'contained' => esc_html__('Contained', 'modern-metals'),
+                    'full-width' => esc_html__('Full Width', 'modern-metals'),
+                    'edge-to-edge' => esc_html__('Edge to Edge', 'modern-metals'),
+                ],
+                'prefix_class' => 'width-mode-',
+                'condition' => [
+                    'full_width' => 'yes',
+                ],
+            ]
+        );
     }
 
     /**
      * Get full width class
      */
     protected function get_full_width_class($settings) {
-        return !empty($settings['full_width']) ? 'full-width-section' : '';
+        $classes = [];
+        
+        if (!empty($settings['full_width'])) {
+            $classes[] = 'full-width-section';
+        }
+        
+        if (!empty($settings['full_height'])) {
+            $classes[] = 'full-height-section';
+        }
+        
+        return implode(' ', $classes);
     }
 
     /**
